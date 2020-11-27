@@ -10,7 +10,9 @@ bool startswith(string MainString, string SubString)
 
 bool endswith(string MainString, string SubString)
 {
-    // code here.
+    bool Ends = MainString.find(SubString, MainString.size() - SubString.size()) != string::npos;
+    if (Ends) return true;
+    else return false;
 }
 
 bool getString(string StartString, string s1, string EndString, string s2)
@@ -49,7 +51,6 @@ int main()
     while (in)
     {
         getline(in, Line);
-        cout << Line << endl;
     }
     in.close();
     return 0;
