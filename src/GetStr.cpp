@@ -3,29 +3,30 @@
 
 using namespace std;
 
-bool startswith(string MainString, string SubString)
+bool startswith(const std::string& StartString, const std::string& SubStart)
 {
-    if (MainString.rfind(SubString) == 0) return true;
+    if (StartString.rfind(SubStart) == 0) return true;
     else return false;    
 }
 
-bool endswith(string MainString, string SubString)
+bool endswith(const std::string& EndString, const std::string& SubEnd)
 {
-    bool Ends = MainString.find(SubString, MainString.size() - SubString.size()) != string::npos;
+    bool Ends = EndString.find(SubEnd, EndString.size() - SubEnd.size()) != string::npos;
     if (Ends) return true;
     else return false;
 }
 
-bool getString(string StartString, string s1, string EndString, string s2)
+bool getString(const std::string& StartStr, const std::string& s1, const std::string& EndStr, const std::string& s2)
 {
-    bool Sw = startswith(StartString, s1);
-    bool Ew =endswith(EndString, s2);
+    bool Sw = startswith(StartStr, s1);
+    bool Ew = endswith(EndStr, s2);
     if (Sw == true && Ew == true) return true;
     else return false;
 }
 
-string replace(string MainString, string ToRepl, string WithRepl)
+string replace(const std::string& MainString, const std::string& ToRepl, const std::string& WithRepl)
 {
-    string Replace = regex_replace(MainString, regex(ToRepl), WithRepl);
-    return Replace;
+    regex re("(" + ToRepl + ")(.*)");
+    string repl = regex_replace(MainString, re, WithRepl);
+    return repl;
 }

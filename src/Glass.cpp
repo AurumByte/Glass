@@ -5,13 +5,11 @@ using namespace std;
 
 int main()
 {
-    string DirName;
-    string Line;
-
     fstream in;
-    bool Instantiate;
 
     string Lst[] = {"Location> ", "File name> "};
+    string DirName;
+    string Line;
     for (int i = 0; i < 2; i++)
     {
         cout << Lst[i];
@@ -31,8 +29,20 @@ int main()
     while (in)
     {
         getline(in, Line);
+        if (getString(Line, "Console.Shout(", Line, ");"))
+        {
+            cout << "Hello world";
+            // string repl = replace(Line, "Console.Shout(", "");
+            // string repl2 = replace(Line, ");", "");
+            // cout << repl2;
+        }
+
+        else if (getString(Line, "Console.Get(", Line, ");"))
+        {
+            string Input;
+            getline(cin, Input);
+        }
     }
-    cin.get();
     in.close();
     return 0;
 }
