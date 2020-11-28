@@ -6,7 +6,7 @@ if EXIST src (
 )
 
 echo Compiling Glass.cpp
-g++ Glass.cpp
+g++ Glass.cpp GetStr.cpp
 
 cd ..
 
