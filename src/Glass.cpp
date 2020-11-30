@@ -31,10 +31,9 @@ int main()
         getline(in, Line);
         if (getString(Line, "Console.Shout(", Line, ");"))
         {
-            cout << "Hello world";
-            // string repl = replace(Line, "Console.Shout(", "");
-            // string repl2 = replace(Line, ");", "");
-            // cout << repl2;
+            string repl = replace(Line, "Console.Shout(", "");
+            string repl2 = replace(Line, ");", "");
+            cout << repl2;
         }
 
         else if (getString(Line, "Console.Get(", Line, ");"))

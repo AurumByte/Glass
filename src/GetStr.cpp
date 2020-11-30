@@ -24,9 +24,8 @@ bool getString(const std::string& StartStr, const std::string& s1, const std::st
     else return false;
 }
 
-string replace(const std::string& MainString, const std::string& ToRepl, const std::string& WithRepl)
+std::string replace(const std::string& MainString, const std::string& ToRepl, const std::string& WithRepl)
 {
-    regex re("(" + ToRepl + ")(.*)");
-    string repl = regex_replace(MainString, re, WithRepl);
+    std::string repl = std::regex_replace(MainString, std::regex("\\" + ToRepl), WithRepl);
     return repl;
 }
