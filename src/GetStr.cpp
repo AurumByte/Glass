@@ -16,16 +16,22 @@ bool endswith(const std::string& EndString, const std::string& SubEnd)
     else return false;
 }
 
-bool getString(const std::string& StartStr, const std::string& s1, const std::string& EndStr, const std::string& s2)
+bool getString(const std::string& StartStr, const std::string& s1, const std::string& s2)
 {
     bool Sw = startswith(StartStr, s1);
-    bool Ew = endswith(EndStr, s2);
+    bool Ew = endswith(StartStr, s2);
     if (Sw == true && Ew == true) return true;
     else return false;
 }
 
-std::string replace(const std::string& MainString, const std::string& ToRepl, const std::string& WithRepl)
+std::string replace(const std::string MainString, const std::string& ToRepl, const std::string& WithRepl)
 {
-    std::string repl = std::regex_replace(MainString, std::regex("\\" + ToRepl), WithRepl);
+    string repl = regex_replace(MainString, regex(ToRepl), WithRepl);
     return repl;
+}
+
+std::string join(std::string& JoinString, const std::string& JoinWith)
+{
+    string Join = JoinString.append(JoinWith);
+    return Join;
 }

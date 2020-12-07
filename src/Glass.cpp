@@ -6,10 +6,10 @@ using namespace std;
 int main()
 {
     fstream in;
-
     string Lst[] = {"Location> ", "File name> "};
     string DirName;
     string Line;
+    int Count = 0;
     for (int i = 0; i < 2; i++)
     {
         cout << Lst[i];
@@ -24,22 +24,43 @@ int main()
             in.open(DirName);
         }
     }
-
     system("cls");
     while (in)
     {
+        Count++;
         getline(in, Line);
-        if (getString(Line, "Console.Shout(", Line, ");"))
+        if (Line == "" || Line == " " || startswith(Line, "  "))
         {
-            string repl = replace(Line, "Console.Shout(", "");
-            string repl2 = replace(Line, ");", "");
-            cout << repl2;
+            continue;
         }
 
-        else if (getString(Line, "Console.Get(", Line, ");"))
+        else if (startswith(Line, "//"))
+        {
+            continue;
+        }
+
+        else if (getString(Line, "Console.Shout(", ");"))
+        {
+            string repl = replace(Line, "\\Console.Shout", "");
+            string repl2 = replace(repl, "\\;", "");
+            string repl3 = replace(repl2, "\\(", "");
+            string repl4 = replace(repl3, "\\)", "");
+            string repl5 = replace(repl4, "\"", "");
+            cout << repl5;
+        }
+
+        else if (getString(Line, "Console.Get(", ");"))
         {
             string Input;
             getline(cin, Input);
+        }
+
+        else
+        {
+            system("cls");
+            system("color 04");
+            cout << "Error.\nProblem Catched at Line: " << Count;
+            exit(0);
         }
     }
     in.close();
