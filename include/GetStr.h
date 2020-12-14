@@ -2,6 +2,7 @@
 
 #include "Glass.h"
 
+bool StrFind(const std::string& MainStr, const std::string& SubString);
 bool startswith(const std::string& StartString, const std::string& SubStart);
 bool endswith(const std::string& EndString, const std::string& SubEnd);
 bool getString(const std::string& StartStr, const std::string& s1, const std::string& s2);
