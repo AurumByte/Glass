@@ -1,4 +1,20 @@
-// using System;
+using System;
+using Generic;
+using PostThread;
+using Collections.DataTypes;
 
-Console.Shout("Hello Buddy!");
-Console.Get();
+string a = "Test! Yoyoyoyoo yo";
+
+Random.rand(100);
+
+Console.Title("Buddy program");
+Console.Color("f0");
+
+Console.Shoutln("Hello world!");
+Console.Get("Bye.");
+
+Console.CMD("echo Hello Program!");
+
+Time.Sleep(3);
+
+Quit();
