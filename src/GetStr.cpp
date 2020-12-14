@@ -3,10 +3,16 @@
 
 using namespace std;
 
+bool StrFind(const std::string& MainStr, const std::string& SubString)
+{
+    if (MainStr.find(SubString) != std::string::npos) return true;
+    else return false;
+}
+
 bool startswith(const std::string& StartString, const std::string& SubStart)
 {
     if (StartString.rfind(SubStart) == 0) return true;
-    else return false;    
+    else return false;
 }
 
 bool endswith(const std::string& EndString, const std::string& SubEnd)
