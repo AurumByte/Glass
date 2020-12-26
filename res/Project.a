@@ -3,7 +3,8 @@ using Generic;
 using PostThread;
 using Collections.DataTypes;
 
-string a = "Test! Yoyoyoyoo yo";
+string Test = "Test! Yoyoyoyoo yo";
+string test2 = "this worked";
 
 Random.rand(100);
 
@@ -17,4 +18,4 @@ Console.CMD("echo Hello Program!");
 
 Time.Sleep(3);
 
-Quit();
+Console.Quit();
