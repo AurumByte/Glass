@@ -14,7 +14,7 @@ std::string DataTypeStr(const std::string lines)
         if (StrFind(repl3, "\""))
         {
             string repl4 = replace(repl3, "\"", "");
-            cout << repl4 << endl;
+            return repl4;
         }
         else return "None";
     }
