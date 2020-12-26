@@ -1,7 +1,7 @@
 import sys
 import os
 
-os.chdir("..\src")
+os.chdir("..\\src")
 Content = os.listdir()
 
 Empty = ""
