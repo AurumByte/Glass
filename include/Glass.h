@@ -10,3 +10,6 @@
 #include <windows.h>
 #include <string.h>
 #include <unistd.h>
+
+extern std::map<std::string, std::string> variables;
+extern std::map<std::string, std::string> VarTypes;
