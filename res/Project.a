@@ -1,21 +1,3 @@
 using System;
-using Generic;
-using PostThread;
-using Collections.DataTypes;
 
-string Test = "Test! Yoyoyoyoo yo";
-string test2 = "this worked";
-
-Random.rand(100);
-
-Console.Title("Buddy program");
-Console.Color("f0");
-
-Console.Shoutln("Hello world!");
-Console.Get("Bye.");
-
-Console.CMD("echo Hello Program!");
-
-Time.Sleep(3);
-
-Console.Quit();
+Console.Shout("Hello world!");
