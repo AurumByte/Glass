@@ -21,3 +21,17 @@ std::string DataTypeStr(const std::string lines)
 
     else return "None";
 }
+
+std::string DataTypeInt(const std::string lines)
+{
+    string repl = replace(lines, "int ", "");
+    string repl2 = replace(repl, "\\;", "");
+    if (StrFind(repl2, "= "))
+    {
+        string repl3 = replace(repl2, "\\= ", "");
+        if (StrFind(repl3, "\"") == false) return repl3;
+        else return "None";
+    }
+
+    else return "None";
+}

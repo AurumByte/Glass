@@ -11,6 +11,9 @@ void PostThreadSleep(const std::string lines)
     string repl3 = replace(repl2, "\\(", "");
     string repl4 = replace(repl3, "\\)", "");
 
-    int SleepTime = stoi(repl4);
+    int SleepTime;
+    if (StrFind(repl4, "\"") == false && VarTypes[repl4] == "type<int>") SleepTime = stoi(variables[repl4]);
+    else SleepTime = 0;
+
     sleep(SleepTime);
 }

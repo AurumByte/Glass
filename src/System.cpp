@@ -16,7 +16,9 @@ void ConsoleCMD(const std::string lines)
     string repl3 = replace(repl2, "\\(", "");
     string repl4 = replace(repl3, "\\)", "");
     string repl5 = replace(repl4, "\"", "");
-    system(repl5.c_str());
+    if (StrFind(repl4, "\"") == false && VarTypes[repl4] == "type<string>") system(variables[repl4].c_str());
+    else if (StrFind(repl4, "\"")) system(repl5.c_str());
+    else cout << "None" << endl;
 }
 
 void ConsoleTitle(const std::string lines)
@@ -26,7 +28,9 @@ void ConsoleTitle(const std::string lines)
     string repl3 = replace(repl2, "\\(", "");
     string repl4 = replace(repl3, "\\)", "");
     string repl5 = replace(repl4, "\"", "");
-    system(("title " + repl5).c_str());
+    if (StrFind(repl4, "\"") == false && VarTypes[repl4] == "type<string>") system(("title " + variables[repl4]).c_str());
+    else if (StrFind(repl4, "\"")) system(("title " + repl5).c_str());
+    else cout << "None" << endl;
 }
 
 void ConsoleColor(const std::string lines)
@@ -36,7 +40,9 @@ void ConsoleColor(const std::string lines)
     string repl3 = replace(repl2, "\\(", "");
     string repl4 = replace(repl3, "\\)", "");
     string repl5 = replace(repl4, "\"", "");
-    system(("color " + repl5).c_str());
+    if (StrFind(repl4, "\"") == false && VarTypes[repl4] == "type<string>") system(("color " + variables[repl4]).c_str());
+    else if (StrFind(repl4, "\"")) system(("color " + repl5).c_str());
+    else cout << "None" << endl;
 }
 
 void ConsoleShout(const std::string lines)
@@ -46,7 +52,9 @@ void ConsoleShout(const std::string lines)
     string repl3 = replace(repl2, "\\(", "");
     string repl4 = replace(repl3, "\\)", "");
     string repl5 = replace(repl4, "\"", "");
-    cout << repl5;
+    if (StrFind(repl4, "\"") == false && VarTypes[repl4] == "type<string>") cout << variables[repl4] << endl;
+    else if (StrFind(repl4, "\"")) cout << repl5;
+    else cout << "None" << endl;
 }
 
 void ConsoleShoutln(const std::string lines)
@@ -56,7 +64,9 @@ void ConsoleShoutln(const std::string lines)
     string repl3 = replace(repl2, "\\(", "");
     string repl4 = replace(repl3, "\\)", "");
     string repl5 = replace(repl4, "\"", "");
-    cout << repl5 << endl;
+    if (StrFind(repl4, "\"") == false && VarTypes[repl4] == "type<string>") cout << variables[repl4] << endl;
+    else if (StrFind(repl4, "\"")) cout << repl5 << endl;
+    else cout << "None" << endl;
 }
 
 std::string ConsoleGet(const std::string lines)
@@ -66,6 +76,20 @@ std::string ConsoleGet(const std::string lines)
     string repl3 = replace(repl2, "\\(", "");
     string repl4 = replace(repl3, "\\)", "");
     string repl5 = replace(repl4, "\"", "");
-    cout << repl5;
-    return repl5;
+
+    string return_val;
+    if (StrFind(repl4, "\"") == false && VarTypes[repl4] == "type<string>")
+    {
+        cout << variables[repl4];
+        return_val = variables[repl4];
+    }
+
+    else if (StrFind(repl4, "\""))
+    {
+        cout << repl5;
+        return_val = repl5;
+    }
+
+    else return_val = "None";
+    return return_val;
 }

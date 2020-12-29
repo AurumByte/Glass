@@ -7,6 +7,8 @@
 
 using namespace std;
 
+std::map<std::string, std::string> variables;
+std::map<std::string, std::string> VarTypes;
 int main()
 {
     // Global variables
@@ -14,7 +16,6 @@ int main()
     string Line;
     string DirName;
     int Count = 0;
-    std::map<string, string> variables;
 
     // Initializing Glass
     system("title Glass");
@@ -22,28 +23,11 @@ int main()
     getline(cin, DirName);
     in.open(DirName);
 
-    /* This part may be used in the future. Do not delete it.
-    string Lst[] = {"Location> ", "File name> "};
-    for (int i = 0; i < 2; i++)
-    {
-        cout << Lst[i];
-        getline(cin, DirName);
-        if (i == 0)
-        {
-            chdir(DirName.c_str());
-        }
-
-        else if (i == 1)
-        {
-            in.open(DirName);
-        }
-    }
-    */
-
     // Package manager.
     int Syspart = 0;
     int Cgrpart = 0;
     int Postpart = 0;
+    int FileIOpart = 0;
     int Genericpart = 0;
     int Collectionpart = 0;
 
@@ -59,10 +43,11 @@ int main()
 
         // These are the Package caller.
         else if (Line == "using System;") Syspart = 1;
-        else if (Line == "using PostThread;") Postpart = 1;
+        else if (Line == "using FileIO;") FileIOpart = 1;
         else if (Line == "using Generic;") Genericpart = 1;
-        else if (Line == "using Collections.DataTypes;") Collectionpart = 1;
+        else if (Line == "using PostThread;") Postpart = 1;
         else if (Line == "using Cgr.Graphics;") Cgrpart = 1;
+        else if (Line == "using Collections.DataTypes;") Collectionpart = 1;
 
         // These are the part of the System Package.
         else if (Line == "Console.Quit();" && Syspart == 1) exit(0);
@@ -88,11 +73,25 @@ int main()
         else if (getString(Line, "string ", ";") && Collectionpart == 1)
         {
             string Value = DataTypeStr(Line);
+            string Type = "type<string>";
 
             auto Title = Value.substr(0, Value.find(' '));
             auto Content = Value.substr(Title.size() + 1, Title.find(' '));
 
             variables[Title] = Content;
+            VarTypes[Title] = Type;
+        }
+
+        else if (getString(Line, "int ", ";") && Collectionpart == 1)
+        {
+            string Value = DataTypeInt(Line);
+            string Type = "type<int>";
+
+            auto Title = Value.substr(0, Value.find(' '));
+            auto Content = Value.substr(Title.size() + 1, Title.find(' '));
+
+            variables[Title] = Content;
+            VarTypes[Title] = Type;
         }
 
         // This will Catch an Exceptional error.
