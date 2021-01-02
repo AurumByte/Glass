@@ -1,3 +1,10 @@
 using System;
+using Generic;
+using Collections.DataTypes;
 
-Console.Shout("Hello world!");
+int test = Random.rand(10);
+Console.Shout(test);
+
+string test2 = "Hello world";
+
+Console.Get(test2);
