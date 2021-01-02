@@ -1,3 +1,5 @@
+// Glass programming language
+// All these includes will be used in Glass
 #include "../include/Glass.h"
 #include "../include/GetStr.h"
 #include "../include/System.h"
@@ -5,8 +7,9 @@
 #include "../include/PostThread.h"
 #include "../include/Collections.h"
 
-using namespace std;
+using namespace std; // This will help us not to write std:: multiple times
 
+// These are the Glass variable dictionaries
 std::map<std::string, std::string> variables;
 std::map<std::string, std::string> VarTypes;
 int main()

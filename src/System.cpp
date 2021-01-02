@@ -52,7 +52,7 @@ void ConsoleShout(const std::string lines)
     string repl3 = replace(repl2, "\\(", "");
     string repl4 = replace(repl3, "\\)", "");
     string repl5 = replace(repl4, "\"", "");
-    if (StrFind(repl4, "\"") == false && VarTypes[repl4] == "type<string>") cout << variables[repl4] << endl;
+    if (StrFind(repl4, "\"") == false) cout << variables[repl4] << endl;
     else if (StrFind(repl4, "\"")) cout << repl5;
     else cout << "None" << endl;
 }

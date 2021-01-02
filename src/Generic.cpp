@@ -11,6 +11,8 @@ std::string RandomRange(const std::string num)
     string repl3 = replace(repl2, "\\(", "");
     string repl4 = replace(repl3, "\\)", "");
 
+    srand(time(0));
+
     int RangeNUM = stoi(repl4);
     int Number = rand() % RangeNUM;
     return to_string(Number);
