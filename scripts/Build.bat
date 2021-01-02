@@ -17,5 +17,3 @@ cd bin
 
 echo Opening Glass.exe
 start Glass.exe
-
-exit
