@@ -16,7 +16,7 @@ std::string DataTypeStr(const std::string lines)
     {
         auto name = repl3.substr(0, repl3.find(' '));
         auto data = repl3.substr(name.size() + 1, name.find(' '));
-        if (getString(data, "Console.Get(", ")"))
+        if (getString(data, "Console.Get(", ")") && Syspart == 1)
         {
             string Input = ConsoleGet(data);
             getline(cin, Input);
@@ -28,7 +28,12 @@ std::string DataTypeStr(const std::string lines)
             return repl5;
         }
 
-        else if (StrFind(repl3, "\"")) return repl4;
+        else if (StrFind(repl3, "\""))
+        {
+            string repl5 = replace(repl4, "\n", "");
+            return repl5;
+        }
+
         else return "None";
     }
 
@@ -44,18 +49,54 @@ std::string DataTypeInt(const std::string lines)
     {
         auto name = repl3.substr(0, repl3.find(' '));
         auto data = repl3.substr(name.size() + 1, name.find(' '));
-        if (getString(data, "Random.rand(", ")"))
+        if (getString(data, "Random.rand(", ")") && Genericpart == 1)
         {
             string Num = RandomRange(data);
 
             string TitleVal = join(name, " ");
             string GetValue = join(TitleVal, Num);
-            string repl5 = replace(GetValue, "\n", "");
+            string repl4 = replace(GetValue, "\n", "");
 
-            return repl5;
+            return repl4;
         }
 
-        else if (StrFind(repl3, "\"") == false) return repl3;
+        else if (StrFind(repl3, "\"") == false)
+        {
+            string repl4 = replace(repl3, "\n", "");
+            return repl4;
+        }
+
+        else return "None";
+    }
+
+    else return "None";
+}
+
+std::string DataTypeBool(const std::string lines)
+{
+    string repl = replace(lines, "bool ", "");
+    string repl2 = replace(repl, "\\;", "");
+    string repl3 = replace(repl2, "\\= ", "");
+    if (StrFind(repl2, "= "))
+    {
+        auto name = repl3.substr(0, repl3.find(' '));
+        auto data = repl3.substr(name.size() + 1, name.find(' '));
+        if (StrFind(repl3, "\"") == false && data == "True")
+        {
+            string GetValue = join(name, " True");
+            string repl4 = replace(GetValue, "\n", "");
+
+            return repl4;
+        }
+
+        else if (StrFind(repl3, "\"") == false && data == "False")
+        {
+            string GetValue = join(name, " False");
+            string repl4 = replace(GetValue, "\n", "");
+
+            return repl4;
+        }
+
         else return "None";
     }
 

@@ -12,6 +12,14 @@ using namespace std; // This will help us not to write std:: multiple times
 // These are the Glass variable dictionaries
 std::map<std::string, std::string> variables;
 std::map<std::string, std::string> VarTypes;
+
+// Package manager.
+int Syspart;
+int Cgrpart;
+int Postpart;
+int FileIOpart;
+int Genericpart;
+int Collectionpart;
 int main()
 {
     // Global variables
@@ -27,12 +35,12 @@ int main()
     in.open(DirName);
 
     // Package manager.
-    int Syspart = 0;
-    int Cgrpart = 0;
-    int Postpart = 0;
-    int FileIOpart = 0;
-    int Genericpart = 0;
-    int Collectionpart = 0;
+    Syspart = 0;
+    Cgrpart = 0;
+    Postpart = 0;
+    FileIOpart = 0;
+    Genericpart = 0;
+    Collectionpart = 0;
 
     // Main langauge
     system("cls");
@@ -89,6 +97,18 @@ int main()
         {
             string Value = DataTypeInt(Line);
             string Type = "type<int>";
+
+            auto Title = Value.substr(0, Value.find(' '));
+            auto Content = Value.substr(Title.size() + 1, Title.find(' '));
+
+            variables[Title] = Content;
+            VarTypes[Title] = Type;
+        }
+
+        else if (getString(Line, "bool ", ";") && Collectionpart == 1)
+        {
+            string Value = DataTypeBool(Line);
+            string Type = "type<boolean>";
 
             auto Title = Value.substr(0, Value.find(' '));
             auto Content = Value.substr(Title.size() + 1, Title.find(' '));
