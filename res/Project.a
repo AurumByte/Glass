@@ -1,10 +1,9 @@
 using System;
-using Generic;
 using Collections.DataTypes;
 
-int test = Random.rand(10);
-Console.Shout(test);
+bool test = True;
+bool test2 = False;
 
-string test2 = "Hello world";
-
-Console.Get(test2);
+Console.Shoutln(test);
+Console.Shout(test2);
+Console.Get("");
