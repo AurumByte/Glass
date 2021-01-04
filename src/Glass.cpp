@@ -20,7 +20,7 @@ int Postpart;
 int FileIOpart;
 int Genericpart;
 int Collectionpart;
-int main()
+int main(int argc, char** argv)
 {
     // Global variables
     fstream in;
@@ -29,9 +29,7 @@ int main()
     int Count = 0;
 
     // Initializing Glass
-    system("title Glass");
-    cout << "File Path> ";
-    getline(cin, DirName);
+    DirName = argv[1];
     in.open(DirName);
 
     // Package manager.
@@ -43,7 +41,6 @@ int main()
     Collectionpart = 0;
 
     // Main langauge
-    system("cls");
     while (in)
     {
         Count++;
