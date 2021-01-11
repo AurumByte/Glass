@@ -13,7 +13,7 @@ The plan for Glass is to make it a Powerful, High-Level, OOP (Object Oriented Pr
 
 ## Instructions
 ### Requirments
-You need to install the following on your device. <br />
+You need to install the following on your machine. <br />
 - Mingw-w64
 - Git-bash
 - Visual Studio Code (or any other IDE)
