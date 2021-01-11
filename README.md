@@ -28,3 +28,6 @@ You need to install the following on your device. <br />
 ## Devlog at Trello
 You can now get it's developement log at: https://trello.com/b/xZ02JY5g/glass <br />
 Thanks for your support :)
+
+## Mentions
+SPECIAL THANKS to TheChreno for providing all the amazing C++ tutorials on his YouTube Channel :)
