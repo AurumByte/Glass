@@ -1,11 +1,6 @@
 // Glass programming language
 // All these includes will be used in Glass
 #include "../include/Glass.h"
-#include "../include/GetStr.h"
-#include "../include/System.h"
-#include "../include/Generic.h"
-#include "../include/PostThread.h"
-#include "../include/Collections.h"
 
 using namespace std; // This will help us not to write std:: multiple times
 
@@ -20,13 +15,25 @@ int Postpart;
 int FileIOpart;
 int Genericpart;
 int Collectionpart;
+
+int Count; // This will make a global Count variable which will be used by Error function.
+
+// This is a global function which will help to make error messages more dynamic.
+void Error(const std::string lines, const std::string num)
+{
+    system("cls");
+    system("color 04");
+    cout << "Error.\nException Catched at Line: " << num << endl << "Exceptional Line: " << lines;
+    exit(0);
+}
+
 int main(int argc, char** argv)
 {
     // Global variables
     fstream in;
     string Line;
     string DirName;
-    int Count = 0;
+    Count = 0;
 
     // Initializing Glass
     DirName = argv[1];
@@ -115,13 +122,7 @@ int main(int argc, char** argv)
         }
 
         // This will Catch an Exceptional error.
-        else
-        {
-            system("cls");
-            system("color 04");
-            cout << "Error.\nException Catched at Line: " << Count << endl << "Exceptional Line: " << Line;
-            exit(0);
-        }
+        else Error(Line, to_string(Count));
     }
     in.close();
     return 0;
