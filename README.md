@@ -16,7 +16,10 @@ You need to install the following on your device. <br />
 - Visual Studio Code (or any other IDE)
 
 ### How To Use
-To use or test this program, go to "scripts" folder and run "Build.bat" and wait for the program to compile. Then go to "bin" folder and open Command Prompt and type "Glass.exe" and the location of your file without quotes. If you haven't created your own then type "..\res\Project.a" or "..\res\test.a" without quotes and explore the sample programs. If you want to create your own Glass program then create a new file with an extention of ".a" without quotes.
+To use or test this program, go to "scripts" folder and run "Build.bat" and wait for the program to compile. <br />
+Then go to "bin" folder and open Command Prompt and type "Glass.exe" and the location of your file without quotes. <br />
+If you haven't created your own then type "..\res\Project.a" or "..\res\test.a" without quotes and explore the sample programs. <br />
+If you want to create your own Glass program then create a new file with an extention of ".a" without quotes. <br />
 
 ## Devlog at Trello
 You can now get it's developement log at: https://trello.com/b/xZ02JY5g/glass <br />
