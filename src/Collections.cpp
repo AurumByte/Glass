@@ -1,8 +1,4 @@
 #include "../include/Glass.h"
-#include "../include/GetStr.h"
-#include "../include/System.h"
-#include "../include/Generic.h"
-#include "../include/Collections.h"
 
 using namespace std;
 

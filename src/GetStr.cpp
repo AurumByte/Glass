@@ -1,5 +1,4 @@
 #include "../include/Glass.h"
-#include "../include/GetStr.h"
 
 using namespace std;
 

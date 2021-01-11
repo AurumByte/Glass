@@ -1,6 +1,4 @@
 #include "../include/Glass.h"
-#include "../include/GetStr.h"
-#include "../include/PostThread.h"
 
 using namespace std;
 
