@@ -30,4 +30,4 @@ You can now get it's developement log at: https://trello.com/b/xZ02JY5g/glass <b
 Thanks for your support :)
 
 ## Mentions
-SPECIAL THANKS to TheChreno for providing all the amazing C++ tutorials on his YouTube Channel :)
+**SPECIAL THANKS** to TheChreno for providing all the amazing C++ tutorials on his YouTube Channel :)
