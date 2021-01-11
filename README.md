@@ -1,6 +1,6 @@
 # Glass
-Glass is a programming language made using C++
 
+Glass is a programming language made using C++ from scratch <br />
 Glass is an early-stage programming language made for beginners, It is going to be a Powerful, High-Level, OOP (Object Oriented Programming) Language. You can even use Glass to develop GUI applications and you can also make Games using OpenGL with Glass. <br />
 Currently not much is implemented, however the developement for this language is going really well.
 
