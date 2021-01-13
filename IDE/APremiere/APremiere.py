@@ -195,7 +195,7 @@ class APremiere:
 
 # Creating a tkinter root
 if __name__ == '__main__':
-    os.system('APremiere Code editor')
+    os.system('title APremiere Code editor')
     root = Tk()
     root.configure(background = '#21252b')
     Editor = APremiere(root)
