@@ -12,6 +12,7 @@ std::map<std::string, std::string> VarTypes;
 int Syspart;
 int Cgrpart;
 int Postpart;
+int Webbrowser;
 int FileIOpart;
 int Genericpart;
 int Collectionpart;
@@ -44,6 +45,7 @@ int main(int argc, char** argv)
     Cgrpart = 0;
     Postpart = 0;
     FileIOpart = 0;
+    Webbrowser = 0;
     Genericpart = 0;
     Collectionpart = 0;
 
@@ -61,6 +63,7 @@ int main(int argc, char** argv)
         else if (Line == "using FileIO;") FileIOpart = 1;
         else if (Line == "using Generic;") Genericpart = 1;
         else if (Line == "using PostThread;") Postpart = 1;
+        else if (Line == "using Webbrowser;") Webbrowser = 1;
         else if (Line == "using Cgr.Graphics;") Cgrpart = 1;
         else if (Line == "using Collections.DataTypes;") Collectionpart = 1;
 
