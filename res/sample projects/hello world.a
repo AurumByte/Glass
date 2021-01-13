@@ -1,4 +1,4 @@
 using System;
 
-Console.Shout("Hello world");
-Console.Get("");
+Shout("Hello world");
+Get("");

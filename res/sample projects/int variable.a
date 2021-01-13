@@ -3,5 +3,5 @@ using Collections.DataTypes;
 
 int a = 1398;
 
-Console.Shout(a);
-Console.Get("");
+Shout(a);
+Get("");

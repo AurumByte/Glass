@@ -3,5 +3,5 @@ using Collections.DataTypes;
 
 string pass = "Continue.";
 
-Console.Shoutln("Hello world");
-Console.Get(pass);
+Shoutln("Hello world");
+Get(pass);
