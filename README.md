@@ -23,7 +23,7 @@ You need to install the following on your machine. <br />
 
 - Then go to "bin" folder and open Command Prompt and type "Glass.exe" and the location of your file without quotes.
 
-- If you haven't created your own then type the path of the sample programs with their name, in "res/sample projects" folder and explore those programs.
+- If you haven't created your own then type the path of the sample programs with their name (with quotes), which exixt in "res/sample projects" folder.
 
 - If you want to create your own Glass program then create a new file with an extention of ".a" without quotes.
 
