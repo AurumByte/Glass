@@ -1,0 +1,4 @@
+using System;
+
+Console.Shout("Hello world");
+Console.Get("");
