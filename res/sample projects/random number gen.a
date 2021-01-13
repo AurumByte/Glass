@@ -1,0 +1,8 @@
+using System;
+using Generic;
+using Collections.DataTypes;
+
+int random = Random.rand(10);
+
+Console.Shout(random);
+Console.Get("");
