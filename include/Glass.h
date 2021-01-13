@@ -24,6 +24,7 @@ extern int Syspart;
 extern int Cgrpart;
 extern int Postpart;
 extern int FileIOpart;
+extern int Webbrowser;
 extern int Genericpart;
 extern int Collectionpart;
 
