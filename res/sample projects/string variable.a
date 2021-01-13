@@ -1,0 +1,7 @@
+using System;
+using Collections.DataTypes;
+
+string pass = "Continue.";
+
+Console.Shoutln("Hello world");
+Console.Get(pass);
