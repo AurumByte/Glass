@@ -27,6 +27,11 @@ You need to install the following on your machine. <br />
 
 - If you want to create your own Glass program then create a new file with an extention of ".a" without quotes.
 
+- Then go to "IDE/APremiere" folder and open APremiere.py to start coding.
+
+## What is APremiere
+APremiere is an IDE made for Glass programming language.
+
 ## Devlog at Trello
 You can now get it's developement log at: https://trello.com/b/xZ02JY5g/glass <br />
 
