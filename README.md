@@ -3,6 +3,8 @@
 Glass is a programming language made using C++ from scratch. <br />
 Glass is an early-stage programming language made for beginners. Currently not much is implemented, however the developement for this language is going really well.
 
+![Glass](/res/img/Glass.png?raw=true "Glass")
+
 ## Getting Started
 Visual Studio Code is recommended (You can use your desired one), Glass is not officially completed and tested yet, but you can still use it to some make small projects, as of now Glass is only focused to run on Windows Operating System.
 
