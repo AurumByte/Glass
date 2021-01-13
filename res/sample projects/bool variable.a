@@ -1,0 +1,9 @@
+using System;
+using Collections.DataTypes;
+
+bool test = True;
+bool test2 = False;
+
+Console.Shoutln(test);
+Console.Shout(test2);
+Console.Get("");
