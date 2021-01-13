@@ -68,14 +68,14 @@ int main(int argc, char** argv)
         else if (Line == "using Collections.DataTypes;") Collectionpart = 1;
 
         // These are the part of the System Package.
-        else if (Line == "Console.Quit();" && Syspart == 1) exit(0);
+        else if (Line == "System.Exit();" && Syspart == 1) exit(0);
         else if (Line == "Console.Clear();" && Syspart == 1) ConsoleClear();
         else if (getString(Line, "Console.CMD(", ");") && Syspart == 1) ConsoleCMD(Line);
         else if (getString(Line, "Console.Title(", ");") && Syspart == 1) ConsoleTitle(Line);
         else if (getString(Line, "Console.Color(", ");") && Syspart == 1) ConsoleColor(Line);
-        else if (getString(Line, "Console.Shout(", ");") && Syspart == 1) ConsoleShout(Line);
-        else if (getString(Line, "Console.Shoutln(", ");") && Syspart == 1) ConsoleShoutln(Line);
-        else if (getString(Line, "Console.Get(", ");") && Syspart == 1)
+        else if (getString(Line, "Shout(", ");") && Syspart == 1) ConsoleShout(Line);
+        else if (getString(Line, "Shoutln(", ");") && Syspart == 1) ConsoleShoutln(Line);
+        else if (getString(Line, "Get(", ");") && Syspart == 1)
         {
             string Input = ConsoleGet(Line);
             getline(cin, Input);
