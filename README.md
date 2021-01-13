@@ -30,7 +30,7 @@ You need to install the following on your machine. <br />
 - Then go to "IDE/APremiere" folder and open APremiere.py to start coding.
 
 ## What is APremiere
-APremiere is an IDE made for Glass programming language.
+APremiere is an IDE made for Glass programming language. I made this Code editor because as of now any other IDE such as VS-Code, Sublime Text 3, Visual Studio and others do not support Glass, they cannot provide intellisense, or color coding for this programming language. APremiere is also open source so you can modify it and help me to make it better.
 
 ## Devlog at Trello
 You can now get it's developement log at: https://trello.com/b/xZ02JY5g/glass <br />
