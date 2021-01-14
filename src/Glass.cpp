@@ -86,6 +86,7 @@ int main(int argc, char** argv)
 
         // These are the part of the Generic Package.
         else if (getString(Line, "Random.rand(", ");") && Genericpart == 1) RandomRange(Line);
+        else if (getString(Line, "Random.Uniform(", ");") && Genericpart == 1) RandomUniform(Line);
 
         // These are the part of Collections Package.
         else if (getString(Line, "string ", ";") && Collectionpart == 1)
@@ -104,6 +105,18 @@ int main(int argc, char** argv)
         {
             string Value = DataTypeInt(Line);
             string Type = "type<int>";
+
+            auto Title = Value.substr(0, Value.find(' '));
+            auto Content = Value.substr(Title.size() + 1, Title.find(' '));
+
+            variables[Title] = Content;
+            VarTypes[Title] = Type;
+        }
+
+        else if (getString(Line, "float ", ";") && Collectionpart == 1)
+        {
+            string Value = DataTypeFloat(Line);
+            string Type = "type<float>";
 
             auto Title = Value.substr(0, Value.find(' '));
             auto Content = Value.substr(Title.size() + 1, Title.find(' '));

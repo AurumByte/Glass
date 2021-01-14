@@ -68,6 +68,38 @@ std::string DataTypeInt(const std::string lines)
     else return "None";
 }
 
+std::string DataTypeFloat(const std::string lines)
+{
+    string repl = replace(lines, "float ", "");
+    string repl2 = replace(repl, "\\;", "");
+    string repl3 = replace(repl2, "\\= ", "");
+    if (StrFind(repl2, "= "))
+    {
+        auto name = repl3.substr(0, repl3.find(' '));
+        auto data = repl3.substr(name.size() + 1, name.find(' '));
+        if (getString(data, "Random.Uniform(", ")") && Genericpart == 1)
+        {
+            string Num = RandomUniform(data);
+
+            string TitleVal = join(name, " ");
+            string GetValue = join(TitleVal, Num);
+            string repl4 = replace(GetValue, "\n", "");
+
+            return repl4;
+        }
+
+        else if (StrFind(repl3, "\"") == false)
+        {
+            string repl4 = replace(repl3, "\n", "");
+            return repl4;
+        }
+
+        else return "None";
+    }
+
+    else return "None";
+}
+
 std::string DataTypeBool(const std::string lines)
 {
     string repl = replace(lines, "bool ", "");

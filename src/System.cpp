@@ -45,7 +45,7 @@ void ConsoleColor(const std::string lines)
 
 void ConsoleShout(const std::string lines)
 {
-    string repl = replace(lines, "\\Console.Shout", "");
+    string repl = replace(lines, "\\Shout", "");
     string repl2 = replace(repl, "\\;", "");
     string repl3 = replace(repl2, "\\(", "");
     string repl4 = replace(repl3, "\\)", "");
@@ -57,7 +57,7 @@ void ConsoleShout(const std::string lines)
 
 void ConsoleShoutln(const std::string lines)
 {
-    string repl = replace(lines, "\\Console.Shoutln", "");
+    string repl = replace(lines, "\\Shoutln", "");
     string repl2 = replace(repl, "\\;", "");
     string repl3 = replace(repl2, "\\(", "");
     string repl4 = replace(repl3, "\\)", "");
@@ -69,7 +69,7 @@ void ConsoleShoutln(const std::string lines)
 
 std::string ConsoleGet(const std::string lines)
 {
-    string repl = replace(lines, "\\Console.Get", "");
+    string repl = replace(lines, "\\Get", "");
     string repl2 = replace(repl, "\\;", "");
     string repl3 = replace(repl2, "\\(", "");
     string repl4 = replace(repl3, "\\)", "");
