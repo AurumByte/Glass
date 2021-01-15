@@ -35,6 +35,9 @@ APremiere is an IDE made for Glass programming language. I made this Code editor
 ## Devlog at Trello
 You can now get it's developement log at: https://trello.com/b/xZ02JY5g/glass <br />
 
+## Short Term Goals
+By the end of 2021, we want to make Glass capable of handling massive console applications without any syntax complexity. Not like a test program, but this time with proper Loops, Functions, Classes, Variables, Conditional statements and much more. This means that we need to make Glass so much Optimize, Enhance and Powerfull.
+
 ## Mentions
 **SPECIAL THANKS** to TheChreno for providing all the amazing C++ tutorials on his YouTube Channel :)
 
