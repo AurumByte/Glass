@@ -25,6 +25,7 @@ The plan for Glass is to make it a Powerful, High-Level, OOP (Object Oriented Pr
 ### Requirments
 You need to install the following on your machine. <br />
 - Mingw-w64
+- Python (To compile the project if you use Build.bat file)
 - Git-bash
 - Visual Studio Code (or any other IDE)
 
