@@ -11,6 +11,16 @@ Start by cloning the repository with `git clone https://github.com/Light-Lens/Gl
 ## The Plan
 The plan for Glass is to make it a Powerful, High-Level, OOP (Object Oriented Programming) Language. In the future Glass can also be used to develop GUI applications and Games using OpenGL.
 
+## Main Features to Come
+- Loops (For loops, While loops)
+- Conditions statements (If else statements, Switch statements)
+- Functions
+- Classes
+- Namespaces
+- Graphics rendering
+- GUI application developement support
+- Custom Library building support (By this feature you can make a Glass Library using ".a" files only, this means you don't need to access the source code everytime you want to create a Library for Glass)
+
 ## Instructions
 ### Requirments
 You need to install the following on your machine. <br />
