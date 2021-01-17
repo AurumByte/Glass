@@ -9,17 +9,18 @@ Visual Studio Code is recommended (You can use your desired one), Glass is not o
 Start by cloning the repository with `git clone https://github.com/Light-Lens/Glass`.
 
 ## The Plan
-The plan for Glass is to make it a Powerful, High-Level, OOP (Object Oriented Programming) Language. In the future Glass can also be used to develop GUI applications and Games using OpenGL.
+The plan for Glass is to make it a Powerful, High-Level, OOP (Object Oriented Programming) Language. In the future Glass can also be used to develop GUI applications and Games using OpenGL (It's not confirmed that OpenGl will be used in Glass for Graphics rendering, We may use something else).
 
 ## Main Features to Come
 - Loops (For loops, While loops)
-- Conditions statements (If else statements, Switch statements)
+- Conditional statements (If else statements, Switch statements)
 - Functions
 - Classes
 - Namespaces
 - Graphics rendering
 - GUI application developement support
 - Custom Library building support (By this feature you can make a Glass Library using ".glass" files only, this means you don't need to access the source code everytime you want to create a Library for Glass)
+And much more... 
 
 ## Instructions
 ### Requirments
