@@ -19,7 +19,7 @@ The plan for Glass is to make it a Powerful, High-Level, OOP (Object Oriented Pr
 - Namespaces
 - Graphics rendering
 - GUI application developement support
-- Custom Library building support (By this feature you can make a Glass Library using ".glass" files only, this means you don't need to access the source code of Glass everytime you want to create a new Library for Glass)
+- Custom Library building support (By this feature you can make a Glass Library using ".glass" files only, this means you don't need to access the source code everytime you want to create a new Library for Glass)
 
 And much more... 
 
