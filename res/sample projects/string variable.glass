@@ -1,7 +1,0 @@
-using System;
-using Collections.DataTypes;
-
-string pass = "Continue.";
-
-Shoutln("Hello world");
-Get(pass);
