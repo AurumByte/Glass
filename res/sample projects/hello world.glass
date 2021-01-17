@@ -1,0 +1,4 @@
+using System;
+
+Shout("Hello world");
+Get("");
