@@ -1,9 +1,0 @@
-using System;
-using Collections.DataTypes;
-
-bool test = True;
-bool test2 = False;
-
-Shoutln(test);
-Shout(test2);
-Get("");

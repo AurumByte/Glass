@@ -1,6 +1,0 @@
-using System;
-using PostThread;
-
-Shoutln("Wait for 3 seconds.");
-Time.Sleep(3);
-Get("Continue.");
