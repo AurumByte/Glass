@@ -36,7 +36,7 @@ You need to install the following on your machine. <br />
 
 - If you haven't created your own then type the path of the sample programs with their name (with quotes), which exixt in "res/sample projects" folder.
 
-- If you want to create your own Glass program then create a new file with an extention of ".a" without quotes.
+- If you want to create your own Glass program then create a new file with an extention of ".glass" without quotes.
 
 - Then go to "IDE/APremiere" folder and open APremiere.py to start coding.
 
