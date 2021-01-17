@@ -22,7 +22,6 @@ int Count; // This will make a global Count variable which will be used by Error
 // This is a global function which will help to make error messages more dynamic.
 void Error(const std::string lines, const std::string num)
 {
-    system("cls");
     system("color 04");
     cout << "Error.\nException Catched at Line: " << num << endl << "Exceptional Line: " << lines;
     exit(0);
@@ -38,7 +37,13 @@ int main(int argc, char** argv)
 
     // Initializing Glass
     DirName = argv[1];
-    in.open(DirName);
+    if (endswith(DirName, ".glass")) in.open(DirName);
+    else
+    {
+    	system("color 04");
+    	cout << "Cannot read \"" << DirName << "\"" << endl;
+    	exit(0);
+    }
 
     // Package manager.
     Syspart = 0;
