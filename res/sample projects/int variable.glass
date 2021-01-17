@@ -1,0 +1,7 @@
+using System;
+using Collections.DataTypes;
+
+int a = 1398;
+
+Shout(a);
+Get("");
