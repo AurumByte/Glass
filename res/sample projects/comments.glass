@@ -1,0 +1,9 @@
+// This is a single line comment
+
+/*This is a multiline comment
+Look it works!
+using System;
+and now it ends.*/
+
+using System;
+Shout("Hello world!");
