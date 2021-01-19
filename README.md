@@ -35,7 +35,7 @@ You need to install the following on your machine. <br />
 ### How To Use
 - To use or test this program, go to "scripts" folder and run "Build.bat" and wait for the program to compile.
 
-- Then go to "bin" folder and open Command Prompt and type "Glass.exe" and path of your file.
+- Then go to "bin" folder and open Command Prompt and type "Glass" and path of your file with it's name.
 
 - If you haven't created your own then type path of those sample programs with their name, which exixt in "res/sample projects" folder.
 
