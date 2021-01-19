@@ -28,7 +28,7 @@ And much more...
 ### Requirments
 You need to install the following on your machine. <br />
 - Mingw-w64
-- Python (To compile the project if you use Build.bat file)
+- Python
 - Git-bash
 - Visual Studio Code (or any other IDE)
 
