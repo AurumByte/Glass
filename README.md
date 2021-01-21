@@ -22,11 +22,11 @@ The plan for Glass is to make it a Powerful, High-Level, OOP (Object Oriented Pr
 - GUI application developement support
 - Custom Library building support (By this feature you can make a Glass Library using ".glass" files only, this means you don't need to access the source code everytime you want to create a new Library for Glass)
 
-And much more... 
+And much more...
 
 ## Instructions
 ### Requirments
-You need to install the following on your machine. <br />
+You need to install the following on your machine.<br />
 - Mingw-w64
 - Python
 - Git-bash
@@ -47,7 +47,7 @@ You need to install the following on your machine. <br />
 APremiere is an IDE made for Glass programming language. I made this Code editor because as of now any other IDE such as VS-Code, Sublime Text 3, Visual Studio and others do not support Glass, they cannot provide intellisense, or color coding for this programming language. APremiere is also open source so you can modify it and help me to make it better.
 
 ## Devlog at Trello
-You can now get it's developement log at: https://trello.com/b/xZ02JY5g/glass <br />
+You can now get it's developement log at: https://trello.com/b/xZ02JY5g/glass<br />
 
 ## Short Term Goals
 By the end of 2021, we want to make Glass capable of handling massive console applications without any syntax complexity. Not like a test program, but this time with proper Loops, Functions, Classes, Variables, Conditional statements and much more. This means that we need to Optimize, Enhance, Powerfull and make Glass so much Easy to use.
