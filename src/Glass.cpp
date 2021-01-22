@@ -96,7 +96,7 @@ int main(int argc, char** argv)
         else if (getString(Line, "Time.Sleep(", ");") && Postpart == 1 && Comments == 0) PostThreadSleep(Line);
 
         // These are the part of the Generic Package.
-        else if (getString(Line, "Random.rand(", ");") && Genericpart == 1 && Comments == 0) RandomRange(Line);
+        else if (getString(Line, "Random.range(", ");") && Genericpart == 1 && Comments == 0) RandomRange(Line);
         else if (getString(Line, "Random.Uniform(", ");") && Genericpart == 1 && Comments == 0) RandomUniform(Line);
 
         // These are the part of Collections Package.

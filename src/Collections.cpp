@@ -12,7 +12,7 @@ std::string DataTypeStr(const std::string lines)
     {
         auto name = repl3.substr(0, repl3.find(' '));
         auto data = repl3.substr(name.size() + 1, name.find(' '));
-        if (getString(data, "Console.Get(", ")") && Syspart == 1)
+        if (getString(data, "Get(", ")") && Syspart == 1)
         {
             string Input = ConsoleGet(data);
             getline(cin, Input);
@@ -45,7 +45,7 @@ std::string DataTypeInt(const std::string lines)
     {
         auto name = repl3.substr(0, repl3.find(' '));
         auto data = repl3.substr(name.size() + 1, name.find(' '));
-        if (getString(data, "Random.rand(", ")") && Genericpart == 1)
+        if (getString(data, "Random.range(", ")") && Genericpart == 1)
         {
             string Num = RandomRange(data);
 
@@ -80,6 +80,17 @@ std::string DataTypeFloat(const std::string lines)
         if (getString(data, "Random.Uniform(", ")") && Genericpart == 1)
         {
             string Num = RandomUniform(data);
+
+            string TitleVal = join(name, " ");
+            string GetValue = join(TitleVal, Num);
+            string repl4 = replace(GetValue, "\n", "");
+
+            return repl4;
+        }
+
+        else if (getString(data, "Random.range(", ")") && Genericpart == 1)
+        {
+            string Num = RandomRange(data);
 
             string TitleVal = join(name, " ");
             string GetValue = join(TitleVal, Num);

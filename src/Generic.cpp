@@ -4,7 +4,7 @@ using namespace std;
 
 std::string RandomRange(const std::string num)
 {
-    string repl = replace(num, "\\Random.rand", "");
+    string repl = replace(num, "\\Random.range", "");
     string repl2 = replace(repl, "\\;", "");
     string repl3 = replace(repl2, "\\(", "");
     string repl4 = replace(repl3, "\\)", "");
