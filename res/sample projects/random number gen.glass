@@ -2,7 +2,7 @@ using System;
 using Generic;
 using Collections.DataTypes;
 
-int random = Random.rand(0,100);
+int random = Random.range(0,100);
 float uniform = Random.Uniform(1, 200);
 
 Shout("Random number: ");
