@@ -16,7 +16,7 @@ void ConsoleCMD(const std::string lines)
     string repl5 = replace(repl4, "\"", "");
     if (StrFind(repl4, "\"") == false && VarTypes[repl4] == "type<string>") system(variables[repl4].c_str());
     else if (StrFind(repl4, "\"")) system(repl5.c_str());
-    else cout << "None" << endl;
+    else Error(lines, to_string(Count));
 }
 
 void ConsoleTitle(const std::string lines)
@@ -28,7 +28,7 @@ void ConsoleTitle(const std::string lines)
     string repl5 = replace(repl4, "\"", "");
     if (StrFind(repl4, "\"") == false && VarTypes[repl4] == "type<string>") system(("title " + variables[repl4]).c_str());
     else if (StrFind(repl4, "\"")) system(("title " + repl5).c_str());
-    else cout << "None" << endl;
+    else Error(lines, to_string(Count));
 }
 
 void ConsoleColor(const std::string lines)
@@ -40,7 +40,7 @@ void ConsoleColor(const std::string lines)
     string repl5 = replace(repl4, "\"", "");
     if (StrFind(repl4, "\"") == false && VarTypes[repl4] == "type<string>") system(("color " + variables[repl4]).c_str());
     else if (StrFind(repl4, "\"")) system(("color " + repl5).c_str());
-    else cout << "None" << endl;
+    else Error(lines, to_string(Count));
 }
 
 void ConsoleShout(const std::string lines)
@@ -51,8 +51,8 @@ void ConsoleShout(const std::string lines)
     string repl4 = replace(repl3, "\\)", "");
     string repl5 = replace(repl4, "\"", "");
     if (StrFind(repl4, "\"") == false) cout << variables[repl4];
-    else if (StrFind(repl4, "\"")) cout << repl5;
-    else cout << "None" << endl;
+    else if (getString(repl4, "\"", "\"")) cout << repl5;
+    else Error(lines, to_string(Count));
 }
 
 void ConsoleShoutln(const std::string lines)
@@ -64,7 +64,7 @@ void ConsoleShoutln(const std::string lines)
     string repl5 = replace(repl4, "\"", "");
     if (StrFind(repl4, "\"") == false) cout << variables[repl4] << endl;
     else if (StrFind(repl4, "\"")) cout << repl5 << endl;
-    else cout << "None" << endl;
+    else Error(lines, to_string(Count));
 }
 
 std::string ConsoleGet(const std::string lines)
@@ -88,6 +88,10 @@ std::string ConsoleGet(const std::string lines)
         return_val = repl5;
     }
 
-    else return_val = "None";
+    else
+    {
+        return_val = "None";
+        Error(lines, to_string(Count));
+    }
     return return_val;
 }

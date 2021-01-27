@@ -17,7 +17,8 @@ int FileIOpart;
 int Genericpart;
 int Collectionpart;
 
-int Count; // This will make a global Count variable which will be used by Error function.
+int Count; // This will make Count variable global which will be used by Error function.
+int Comments; // This will make Comments variable global which will be used to check whether there is a multiline comment in the code.
 
 // This is a global function which will help to make error messages more dynamic.
 void Error(const std::string lines, const std::string num)
@@ -38,7 +39,7 @@ int main(int argc, char** argv)
     // Initializing Glass
     DirName = argv[1];
     if (endswith(DirName, ".glass")) in.open(DirName);
-    else if (DirName == "-version") cout << "Glass 2021 [Alpha 0.7]" << endl;
+    else if (DirName == "-version") cout << "Glass 2021 [Alpha 0.8]" << endl;
     else if (DirName == "-help") cout << "-version :     Shows the version of Glass" << endl;
     else
     {
@@ -57,7 +58,7 @@ int main(int argc, char** argv)
     Genericpart = 0;
     Collectionpart = 0;
 
-    int Comments = 0;
+    Comments = 0;
     // Main langauge
     while (in)
     {
@@ -94,6 +95,7 @@ int main(int argc, char** argv)
 
         // These are the part of PostThread Package.
         else if (getString(Line, "Time.Sleep(", ");") && Postpart == 1 && Comments == 0) PostThreadSleep(Line);
+        else if (Line == "Time.Now();" && Postpart == 1 && Comments == 0) PostThreadNow();
 
         // These are the part of the Generic Package.
         else if (getString(Line, "Random.range(", ");") && Genericpart == 1 && Comments == 0) RandomRange(Line);

@@ -24,6 +24,17 @@ std::string DataTypeStr(const std::string lines)
             return repl5;
         }
 
+        else if (data == "Time.Now()" && Postpart == 1)
+        {
+            string Currenttime = PostThreadNow();
+
+            string TitleVal = join(name, " ");
+            string GetValue = join(TitleVal, Currenttime);
+            string repl4 = replace(GetValue, "\n", "");
+
+            return repl4;
+        }
+
         else if (StrFind(repl3, "\""))
         {
             string repl5 = replace(repl4, "\n", "");
@@ -33,7 +44,11 @@ std::string DataTypeStr(const std::string lines)
         else return "None";
     }
 
-    else return "None";
+    else
+    {
+        Error(lines, to_string(Count));
+        return "None";
+    }
 }
 
 std::string DataTypeInt(const std::string lines)
@@ -65,7 +80,11 @@ std::string DataTypeInt(const std::string lines)
         else return "None";
     }
 
-    else return "None";
+    else
+    {
+        Error(lines, to_string(Count));
+        return "None";
+    }
 }
 
 std::string DataTypeFloat(const std::string lines)
@@ -108,7 +127,11 @@ std::string DataTypeFloat(const std::string lines)
         else return "None";
     }
 
-    else return "None";
+    else
+    {
+        Error(lines, to_string(Count));
+        return "None";
+    }
 }
 
 std::string DataTypeBool(const std::string lines)
@@ -139,5 +162,9 @@ std::string DataTypeBool(const std::string lines)
         else return "None";
     }
 
-    else return "None";
+    else
+    {
+        Error(lines, to_string(Count));
+        return "None";
+    }
 }

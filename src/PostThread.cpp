@@ -16,3 +16,10 @@ void PostThreadSleep(const std::string lines)
 
     sleep(SleepTime);
 }
+
+std::string PostThreadNow()
+{
+	time_t now = time(0);
+	std::string date_time = ctime(&now);
+	return date_time;
+}
