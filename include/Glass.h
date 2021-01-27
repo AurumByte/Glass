@@ -29,5 +29,6 @@ extern int Genericpart;
 extern int Collectionpart;
 
 extern int Count;
+extern int Comments;
 
 void Error(const std::string lines, const std::string num);
