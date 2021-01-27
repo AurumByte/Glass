@@ -1,0 +1,9 @@
+using System;
+using PostThread;
+using Collections.DataTypes;
+
+string Currenttime = Time.Now();
+
+Shout("Current time is: ");
+Shout(Currenttime);
+Get("");
