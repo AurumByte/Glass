@@ -13,5 +13,5 @@ for Filenames in Content:
 for Iterations in Files:
     Empty += f" {Iterations}"
 
-os.system(f"g++ Glass.cpp{Empty}");
+os.system(f"g++ Glass.cpp {Empty}");
 sys.exit()
