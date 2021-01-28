@@ -23,8 +23,9 @@ int Comments; // This will make Comments variable global which will be used to c
 // This is a global function which will help to make error messages more dynamic.
 void Error(const std::string lines, const std::string num)
 {
-    system("color 04");
+    setConsoleColor(04);
     cout << "Error.\nException Catched at Line: " << num << endl << "Exceptional Line: " << lines;
+    setConsoleColor(7);
     exit(0);
 }
 
@@ -39,7 +40,7 @@ int main(int argc, char** argv)
     // Initializing Glass
     DirName = argv[1];
     if (endswith(DirName, ".glass")) in.open(DirName);
-    else if (DirName == "-version") cout << "Glass 2021 [Alpha 0.8]" << endl;
+    else if (DirName == "-version") cout << "Glass 2021 [Alpha 0.9]" << endl;
     else if (DirName == "-help") cout << "-version :     Shows the version of Glass" << endl;
     else
     {
@@ -82,6 +83,7 @@ int main(int argc, char** argv)
         // These are the part of the System Package.
         else if (Line == "System.Exit();" && Syspart == 1 && Comments == 0) exit(0);
         else if (Line == "Console.Clear();" && Syspart == 1 && Comments == 0) ConsoleClear();
+        else if (Line == "Console.ColorReset();" && Syspart == 1 && Comments == 0) ConsoleColorReser();
         else if (getString(Line, "Console.CMD(", ");") && Syspart == 1 && Comments == 0) ConsoleCMD(Line);
         else if (getString(Line, "Console.Title(", ");") && Syspart == 1 && Comments == 0) ConsoleTitle(Line);
         else if (getString(Line, "Console.Color(", ");") && Syspart == 1 && Comments == 0) ConsoleColor(Line);

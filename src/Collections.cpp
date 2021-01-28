@@ -12,7 +12,13 @@ std::string DataTypeStr(const std::string lines)
     {
         auto name = repl3.substr(0, repl3.find(' '));
         auto data = repl3.substr(name.size() + 1, name.find(' '));
-        if (getString(data, "Get(", ")") && Syspart == 1)
+        if (getString(data, "\"", "\""))
+        {
+            string repl5 = replace(repl4, "\n", "");
+            return repl5;
+        }
+
+        else if (getString(data, "Get(", ")") && Syspart == 1)
         {
             string Input = ConsoleGet(data);
             getline(cin, Input);
@@ -35,13 +41,17 @@ std::string DataTypeStr(const std::string lines)
             return repl4;
         }
 
-        else if (StrFind(repl3, "\""))
+        else if (getString(data, "\'", "\'") || getString(data, "\"", "\'") || getString(data, "\'", "\"") || startswith(data, "\"") == false || endswith(data, "\"") == false)
         {
-            string repl5 = replace(repl4, "\n", "");
-            return repl5;
+            Error(lines, to_string(Count));
+            return "None";
         }
 
-        else return "None";
+        else
+        {
+            Error(lines, to_string(Count));
+            return "None";
+        }
     }
 
     else
@@ -60,7 +70,13 @@ std::string DataTypeInt(const std::string lines)
     {
         auto name = repl3.substr(0, repl3.find(' '));
         auto data = repl3.substr(name.size() + 1, name.find(' '));
-        if (getString(data, "Random.range(", ")") && Genericpart == 1)
+        if (getString(data, "\"", "\"") == false)
+        {
+            string repl4 = replace(repl3, "\n", "");
+            return repl4;
+        }
+
+        else if (getString(data, "Random.range(", ")") && Genericpart == 1)
         {
             string Num = RandomRange(data);
 
@@ -71,13 +87,17 @@ std::string DataTypeInt(const std::string lines)
             return repl4;
         }
 
-        else if (StrFind(repl3, "\"") == false)
+        else if (getString(data, "\'", "\'") || getString(data, "\"", "\'") || getString(data, "\'", "\"") || startswith(data, "\"") == false || endswith(data, "\"") == false)
         {
-            string repl4 = replace(repl3, "\n", "");
-            return repl4;
+            Error(lines, to_string(Count));
+            return "None";
         }
 
-        else return "None";
+        else
+        {
+            Error(lines, to_string(Count));
+            return "None";
+        }
     }
 
     else
@@ -96,7 +116,13 @@ std::string DataTypeFloat(const std::string lines)
     {
         auto name = repl3.substr(0, repl3.find(' '));
         auto data = repl3.substr(name.size() + 1, name.find(' '));
-        if (getString(data, "Random.Uniform(", ")") && Genericpart == 1)
+        if (getString(data, "\"", "\"") == false)
+        {
+            string repl4 = replace(repl3, "\n", "");
+            return repl4;
+        }
+
+        else if (getString(data, "Random.Uniform(", ")") && Genericpart == 1)
         {
             string Num = RandomUniform(data);
 
@@ -118,13 +144,17 @@ std::string DataTypeFloat(const std::string lines)
             return repl4;
         }
 
-        else if (StrFind(repl3, "\"") == false)
+        else if (getString(data, "\'", "\'") || getString(data, "\"", "\'") || getString(data, "\'", "\"") || startswith(data, "\"") == false || endswith(data, "\"") == false)
         {
-            string repl4 = replace(repl3, "\n", "");
-            return repl4;
+            Error(lines, to_string(Count));
+            return "None";
         }
 
-        else return "None";
+        else
+        {
+            Error(lines, to_string(Count));
+            return "None";
+        }
     }
 
     else
@@ -143,7 +173,7 @@ std::string DataTypeBool(const std::string lines)
     {
         auto name = repl3.substr(0, repl3.find(' '));
         auto data = repl3.substr(name.size() + 1, name.find(' '));
-        if (StrFind(repl3, "\"") == false && data == "True")
+        if (getString(repl3, "\"", "\"") == false && data == "True")
         {
             string GetValue = join(name, " True");
             string repl4 = replace(GetValue, "\n", "");
@@ -151,7 +181,7 @@ std::string DataTypeBool(const std::string lines)
             return repl4;
         }
 
-        else if (StrFind(repl3, "\"") == false && data == "False")
+        else if (getString(repl3, "\"", "\"") == false && data == "False")
         {
             string GetValue = join(name, " False");
             string repl4 = replace(GetValue, "\n", "");
@@ -159,7 +189,17 @@ std::string DataTypeBool(const std::string lines)
             return repl4;
         }
 
-        else return "None";
+        else if (getString(data, "\'", "\'") || getString(data, "\"", "\'") || getString(data, "\'", "\""))
+        {
+            Error(lines, to_string(Count));
+            return "None";
+        }
+
+        else
+        {
+            Error(lines, to_string(Count));
+            return "None";
+        }
     }
 
     else
