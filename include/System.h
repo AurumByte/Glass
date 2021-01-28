@@ -3,6 +3,7 @@
 #include "Glass.h"
 
 void ConsoleClear();
+void ConsoleColorReser();
 void ConsoleCMD(const std::string lines);
 void ConsoleTitle(const std::string lines);
 void ConsoleColor(const std::string lines);
