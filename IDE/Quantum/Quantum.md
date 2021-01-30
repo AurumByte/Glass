@@ -10,7 +10,7 @@ Visual Studio Code is recommended (You can use your desired one), Quantum is not
 Start by cloning the repository with `git clone https://github.com/Light-Lens/Quantum`.
 
 ## The Plan
-The plan for Quantum is to make it a Powerful but Easy to use IDE/Code editor, We want to make it so powerful that it can be used to code in any programming language you want. Right now Quantum uses One Dark Pro theme for it but in future it will be using it's own Custom theme.
+The plan for Quantum is to make it a Powerful but Easy to use IDE/Code editor, We want to make it so powerful that it can be used to code in any programming language you want.
 
 ## Main Features to Come
 - Intellisense
