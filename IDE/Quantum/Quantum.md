@@ -30,9 +30,7 @@ You need to install the following on your machine.
 
 ### How To Use
 - To use or test this program, go to "scripts" folder and run "Compile.bat" and wait for the program to compile.
-
 - Then go to "bin" folder and open "Quantum.exe".
-
 - Then Open or Create a new file.
 
 ## What is Quantum
