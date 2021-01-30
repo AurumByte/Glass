@@ -54,8 +54,8 @@ By the end of 2021, we want to make Glass capable of handling massive console ap
 ## Mentions
 **SPECIAL THANKS** to TheCherno and Nikhil Malankar for providing all the amazing C++ tutorials on his YouTube Channel :)
 
-Their YouTube Channel links:
-TheCherno: https://www.youtube.com/c/TheChernoProject
+Their YouTube Channel links:<br />
+TheCherno: https://www.youtube.com/c/TheChernoProject<br />
 Nikhil Malankar: https://www.youtube.com/channel/UC7rPccatXfcuLxiUPzm9AyQ
 
 Thanks to everyone for their support :)
