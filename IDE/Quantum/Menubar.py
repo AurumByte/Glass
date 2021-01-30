@@ -24,16 +24,16 @@ class Menubar:
 		File_drop.add_command(label = "Exit", command = parent.root.destroy)
 
 		Edit_drop = Menu(Menu_options, font = Font_data, tearoff = 0, background = "white", foreground = "black")
-		Edit_drop.add_command(label = "Undo", command = self.undo)
-		Edit_drop.add_command(label = "Redo", command = self.redo)
+		Edit_drop.add_command(label = "Undo", command = self.undo, accelerator = "Ctrl+Z")
+		Edit_drop.add_command(label = "Redo", command = self.redo, accelerator = "Ctrl+Y")
 		Edit_drop.add_separator()
-		Edit_drop.add_command(label = "Cut", command = self.cut)
-		Edit_drop.add_command(label = "Copy", command = self.copy)
-		Edit_drop.add_command(label = "Paste", command = self.paste)
+		Edit_drop.add_command(label = "Cut", command = self.cut, accelerator = "Ctrl+X")
+		Edit_drop.add_command(label = "Copy", command = self.copy, accelerator = "Ctrl+C")
+		Edit_drop.add_command(label = "Paste", command = self.paste, accelerator = "Ctrl+V")
 		Edit_drop.add_separator()
-		Edit_drop.add_command(label = "Find", command = self.find)
+		Edit_drop.add_command(label = "Find", command = self.find, accelerator = "Ctrl+F")
 		Edit_drop.add_separator()
-		Edit_drop.add_command(label = "Select All", command = self.selectAll)
+		Edit_drop.add_command(label = "Select All", command = self.selectAll, accelerator = "Ctrl+A")
 
 		About_drop = Menu(Menu_options, font = Font_data, tearoff = 0, background = "white", foreground = "black")
 		About_drop.add_command(label = "Release Note", command = self.show_release_note)
@@ -83,9 +83,9 @@ class Menubar:
 		if target:
 			idx = '1.0'
 			while 1:
-				idx = self.parent.Text_area.search(target, idx, nocase=1, stopindex=END)
+				idx = self.parent.Text_area.search(target, idx, nocase = 1, stopindex=END)
 				if not idx: break
 				lastidx = '%s+%dc' % (idx, len(target))
 				self.parent.Text_area.tag_add('found', idx, lastidx)
 				idx = lastidx
-			self.parent.Text_area.tag_config('found', foreground='white', background='blue')
+			self.parent.Text_area.tag_config('found', foreground = 'white', background = 'blue')
