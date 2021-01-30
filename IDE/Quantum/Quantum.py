@@ -34,7 +34,8 @@ class Quantum:
 							undo = True,
 							wrap = WORD)
 
-		self.scroll = Scrollbar(root, command = self.Text_area.yview) # This is Scrollbar widget to add a scrollbar in Text widget
+		# This is Scrollbar widget to add a scrollbar in Text widget
+		self.scroll = Scrollbar(root, command = self.Text_area.yview)
 
 		# This will configure and pack Text_area and scroll objects
 		self.Text_area.configure(yscrollcommand = self.scroll.set)
@@ -84,8 +85,9 @@ class Quantum:
 			try:
 				textarea_content = self.Text_area.get(1.0, END)
 				with open(self.filename, "w") as Data: Data.write(textarea_content)
-			except Exception:
-				pass
+				self.status.update_status(True)
+
+			except Exception: pass
 
 		else: self.save_file_as()
 
@@ -110,6 +112,7 @@ class Quantum:
 
 			textarea_content = self.Text_area.get(1.0, END)
 			with open(new_file, "w") as Data: Data.write(textarea_content)
+			self.status.update_status(True)
 			self.filename = new_file
 			self.update_title(self.filename)
 
@@ -122,6 +125,7 @@ class Quantum:
 		self.Text_area.bind('<Control-s>', self.save_file)
 		self.Text_area.bind('<Control-S>', self.save_file_as)
 		self.Text_area.bind('<Control-BackSpace>', self.do_ctrl_backspace)
+		self.Text_area.bind('<Key>', self.status.update_status)
 
 # Creating Tkinter root
 if __name__ == '__main__':
