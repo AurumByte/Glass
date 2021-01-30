@@ -34,18 +34,10 @@ You need to install the following on your machine.<br />
 
 ### How To Use
 - To use or test this program, go to "scripts" folder and run "Build.bat" and wait for the program to compile.
-
 - Then go to "bin" folder and open Command Prompt and type "Glass" and path of your file with it's name.
-
 - If you haven't created your own then type path of those sample programs with their name, which exixt in "res/sample projects" folder.
-
 - If you want to create your own Glass program then create a new file with an extention of ".glass" without quotes.
-
-- Then go to "IDE/APremiere" folder and open APremiere.py to start coding.
-- You can also use Quantum: https://github.com/Light-Lens/Quantum instead of APremiere
-
-## What is APremiere
-APremiere is an IDE made for Glass programming language. I made this Code editor because as of now any other IDE such as VS-Code, Sublime Text 3, Visual Studio and others do not support Glass, they cannot provide intellisense, or color coding for this programming language. APremiere is also open source so you can modify it and help me to make it better.
+- Then go to Quantum repository: https://github.com/Light-Lens/Quantum (All details about Quantum is on Quantum github repository.)
 
 ## Devlog at Trello
 You can now get it's developement log at: https://trello.com/b/xZ02JY5g/glass<br />
