@@ -39,6 +39,9 @@ You need to install the following on your machine.<br />
 - If you want to create your own Glass program then create a new file with an extention of ".glass" without quotes.
 - Then go to Quantum repository: https://github.com/Light-Lens/Quantum (All details about Quantum is on Quantum github repository.)
 
+## What is CGLass
+Get Info About CGlass ![here](https://github.com/Light-Lens/Glass/blob/master/IDE/CGlass/CGlass.md#cglass).
+
 ## Devlog at Trello
 You can now get it's developement log at: https://trello.com/b/xZ02JY5g/glass<br />
 
