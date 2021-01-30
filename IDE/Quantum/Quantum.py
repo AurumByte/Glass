@@ -44,7 +44,9 @@ class Quantum:
 		# This is a Custom Menu Class in which New and more items are there.
 		self.menu = Menubar(self)
 		self.status = Statusbar(self)
+		self.binding_keys()
 
+	# This will update title of the window
 	def update_title(self, name = None):
 		if name: self.root.title(f"{name} - Quantum")
 		else: self.root.title("Untitled - Quantum")
@@ -113,13 +115,13 @@ class Quantum:
 
 		except Exception: pass
 
-	def do_ctrl_backspace(self, *args): self.Codearea.delete("insert -4 chars", "insert")
+	def do_ctrl_backspace(self, *args): self.Text_area.delete("insert -4 chars", "insert")
 	def binding_keys(self):
-		self.Codearea.bind('<Control-n>', self.new_file)
-		self.Codearea.bind('<Control-o>', self.open_file)
-		self.Codearea.bind('<Control-s>', self.save_file)
-		self.Codearea.bind('<Control-S>', self.save_file_as)
-		self.Codearea.bind('<Control-BackSpace>', self.do_ctrl_backspace)
+		self.Text_area.bind('<Control-n>', self.new_file)
+		self.Text_area.bind('<Control-o>', self.open_file)
+		self.Text_area.bind('<Control-s>', self.save_file)
+		self.Text_area.bind('<Control-S>', self.save_file_as)
+		self.Text_area.bind('<Control-BackSpace>', self.do_ctrl_backspace)
 
 # Creating Tkinter root
 if __name__ == '__main__':
