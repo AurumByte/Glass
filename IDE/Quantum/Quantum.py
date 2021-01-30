@@ -45,10 +45,15 @@ class Quantum:
 		self.menu = Menubar(self)
 		self.status = Statusbar(self)
 
+	def update_title(self, name = None):
+		if name: self.root.title(f"{name} - Quantum")
+		else: self.root.title("Untitled - Quantum")
+
 	# This will create a new file in our IDE
 	def new_file(self, *args):
 		self.Text_area.delete(1.0, END)
 		self.filename = None
+		self.update_title()
 
 	# This will open a file in our IDE
 	def open_file(self, *args):
@@ -68,8 +73,8 @@ class Quantum:
 						("JavaScript", ".js")])
 
 		self.Text_area.delete(1.0, END)
-		with open(self.filename, "r") as Data:
-			self.Text_area.insert(1.0, Data.read())
+		with open(self.filename, "r") as Data: self.Text_area.insert(1.0, Data.read())
+		self.update_title(self.filename)
 
 	# This will save a file in our IDE
 	def save_file(self, *args):
@@ -103,8 +108,18 @@ class Quantum:
 
 			textarea_content = self.Text_area.get(1.0, END)
 			with open(new_file, "w") as Data: Data.write(textarea_content)
-		except Exception:
-			pass
+			self.filename = new_file
+			self.update_title(self.filename)
+
+		except Exception: pass
+
+	def do_ctrl_backspace(self, *args): self.Codearea.delete("insert -4 chars", "insert")
+	def binding_keys(self):
+		self.Codearea.bind('<Control-n>', self.new_file)
+		self.Codearea.bind('<Control-o>', self.open_file)
+		self.Codearea.bind('<Control-s>', self.save_file)
+		self.Codearea.bind('<Control-S>', self.save_file_as)
+		self.Codearea.bind('<Control-BackSpace>', self.do_ctrl_backspace)
 
 # Creating Tkinter root
 if __name__ == '__main__':
