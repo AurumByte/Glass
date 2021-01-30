@@ -7,7 +7,7 @@ from tkinter import messagebox
 # This class will be used to make the menu for Quantum
 class Menubar:
 	def __init__(self, parent):
-		Font_data = ("ubuntu", 9) # This Font data will be used to add font to menubar
+		Font_data = ("calibri", 9) # This Font data will be used to add font to menubar
 
 		# Create a new menu object
 		Menu_options = Menu(parent.root, font = Font_data)
@@ -79,7 +79,7 @@ class Menubar:
 
 	def find(self, *args):
 		self.parent.Text_area.tag_remove('found', '1.0', END)
-		target = askstring('Find', 'Search String:')
+		target = askstring('Find', 'Find what:')
 		if target:
 			idx = '1.0'
 			while 1:

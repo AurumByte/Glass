@@ -4,7 +4,7 @@ from tkinter import *
 # This class will be used to make the menu for Quantum
 class Statusbar:
 	def __init__(self, parent):
-		Font_data = ("ubuntu", 9)
+		Font_data = ("calibri", 9)
 
 		self.status = StringVar()
 		self.status.set("Quantum")
