@@ -1,5 +1,6 @@
 # All these modules need to be imported in Menubar
 from tkinter import *
+from tkinter.simpledialog import *
 from tkinter import filedialog
 from tkinter import messagebox
 
@@ -11,6 +12,7 @@ class Menubar:
 		# Create a new menu object
 		Menu_options = Menu(parent.root, font = Font_data)
 		parent.root.config(menu = Menu_options)
+		self.parent = parent
 
 		# Make a File menu in Menubar
 		File_drop = Menu(Menu_options, font = Font_data, tearoff = 0, background = "white", foreground = "black")
@@ -21,12 +23,25 @@ class Menubar:
 		File_drop.add_separator()
 		File_drop.add_command(label = "Exit", command = parent.root.destroy)
 
+		Edit_drop = Menu(Menu_options, font = Font_data, tearoff = 0, background = "white", foreground = "black")
+		Edit_drop.add_command(label = "Undo", command = self.undo)
+		Edit_drop.add_command(label = "Redo", command = self.redo)
+		Edit_drop.add_separator()
+		Edit_drop.add_command(label = "Cut", command = self.cut)
+		Edit_drop.add_command(label = "Copy", command = self.copy)
+		Edit_drop.add_command(label = "Paste", command = self.paste)
+		Edit_drop.add_separator()
+		Edit_drop.add_command(label = "Find", command = self.find)
+		Edit_drop.add_separator()
+		Edit_drop.add_command(label = "Select All", command = self.selectAll)
+
 		About_drop = Menu(Menu_options, font = Font_data, tearoff = 0, background = "white", foreground = "black")
 		About_drop.add_command(label = "Release Note", command = self.show_release_note)
 		About_drop.add_separator()
 		About_drop.add_command(label = "About", command = self.show_about_option)
 
 		Menu_options.add_cascade(label = "File", menu = File_drop)
+		Menu_options.add_cascade(label = "Edit", menu = Edit_drop)
 		Menu_options.add_cascade(label = "Help", menu = About_drop)
 
 	def show_about_option(self):
@@ -38,3 +53,39 @@ class Menubar:
 		note_title = "Release Notes"
 		note_message = "Quantum 2021 [Version 0.3-alpha]"
 		messagebox.showinfo(note_title, note_message)
+
+	def copy(self, *args):
+		sel = self.parent.Text_area.selection_get()
+		self.clipboard = sel
+
+	def cut(self, *args):
+		sel = self.parent.Text_area.selection_get()
+		self.clipboard = sel
+		self.parent.Text_area.delete(SEL_FIRST, SEL_LAST)
+
+	def paste(self, *args):
+		self.parent.Text_area.insert(INSERT, self.clipboard)
+
+	def selectAll(self, *args):
+		self.parent.Text_area.tag_add(SEL, "1.0", END)
+		self.parent.Text_area.mark_set(0.0, END)
+		self.parent.Text_area.see(INSERT)
+
+	def undo(self, *args):
+		self.parent.Text_area.edit_undo()
+
+	def redo(self, *args):
+		self.parent.Text_area.edit_redo()
+
+	def find(self, *args):
+		self.parent.Text_area.tag_remove('found', '1.0', END)
+		target = askstring('Find', 'Search String:')
+		if target:
+			idx = '1.0'
+			while 1:
+				idx = self.parent.Text_area.search(target, idx, nocase=1, stopindex=END)
+				if not idx: break
+				lastidx = '%s+%dc' % (idx, len(target))
+				self.parent.Text_area.tag_add('found', idx, lastidx)
+				idx = lastidx
+			self.parent.Text_area.tag_config('found', foreground='white', background='blue')
