@@ -21,7 +21,7 @@ class Menubar:
 		File_drop.add_separator()
 		File_drop.add_command(label = "Exit", command = parent.root.destroy)
 
-		About_drop = Menu(Menu_options, font = Font_data, tearoff = 0)
+		About_drop = Menu(Menu_options, font = Font_data, tearoff = 0, background = "white", foreground = "black")
 		About_drop.add_command(label = "Release Note", command = self.show_release_note)
 		About_drop.add_separator()
 		About_drop.add_command(label = "About", command = self.show_about_option)
