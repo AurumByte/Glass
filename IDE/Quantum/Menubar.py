@@ -4,6 +4,9 @@ from tkinter.simpledialog import *
 from tkinter import filedialog
 from tkinter import messagebox
 
+# These are custom classes that will be used to add features to Quantum
+from Statusbar import Statusbar
+
 # This class will be used to make the menu for Quantum
 class Menubar:
 	def __init__(self, parent):
@@ -88,4 +91,5 @@ class Menubar:
 				lastidx = '%s+%dc' % (idx, len(target))
 				self.parent.Text_area.tag_add('found', idx, lastidx)
 				idx = lastidx
-			self.parent.Text_area.tag_config('found', foreground = 'white', background = 'blue')
+
+			self.parent.Text_area.tag_config('found', foreground = '#f9f9f9', background = '#1054de')

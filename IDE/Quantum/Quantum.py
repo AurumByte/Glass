@@ -8,6 +8,7 @@ import sys, os
 # These are custom classes that will be used to add features to Quantum
 from Menubar import Menubar
 from Statusbar import Statusbar
+from Intellisense import Intellisense
 
 # Creating the main class for Quantum
 class Quantum:
@@ -28,7 +29,7 @@ class Quantum:
 		self.Text_area = Text(root,
 							font = Font_data,
 							selectbackground = "#474747",
-							insertbackground = "#528bff",
+							insertbackground = "#ff1269",
 							foreground = "#f9f9f9",
 							background = "#2c2c2c",
 							undo = True,
@@ -45,12 +46,19 @@ class Quantum:
 		# This is a Custom Menu Class in which New and more items are there.
 		self.menu = Menubar(self)
 		self.status = Statusbar(self)
+		self.intellisense = Intellisense(self)
 		self.binding_keys()
+
+	def Colorcode(self, *args):
+		self.intellisense.intellisense("using", "#f5b800", "using_tag")
+		self.intellisense.intellisense("Shout", "#f55a00", "shout_tag")
+		self.intellisense.intellisense("Shoutln", "#f55a00", "shoutln_tag")
 
 	# This will update title of the window
 	def update_title(self, name = None):
 		if name: self.root.title(f"{name} - Quantum")
 		else: self.root.title("Untitled - Quantum")
+		self.Colorcode()
 
 	# This will create a new file in our IDE
 	def new_file(self, *args):
@@ -118,14 +126,16 @@ class Quantum:
 
 		except Exception: pass
 
-	def do_ctrl_backspace(self, *args): self.Text_area.delete("insert -4 chars", "insert")
+	def do_ctrl_backspace(self, *args): self.Text_area.delete("insert -7 chars", "insert")
 	def binding_keys(self):
 		self.Text_area.bind('<Control-n>', self.new_file)
 		self.Text_area.bind('<Control-o>', self.open_file)
 		self.Text_area.bind('<Control-s>', self.save_file)
 		self.Text_area.bind('<Control-S>', self.save_file_as)
+		self.Text_area.bind('<Control-f>', self.menu.find)
 		self.Text_area.bind('<Control-BackSpace>', self.do_ctrl_backspace)
 		self.Text_area.bind('<Key>', self.status.update_status)
+		self.Text_area.bind('<Alt-i>', self.Colorcode)
 
 # Creating Tkinter root
 if __name__ == '__main__':
