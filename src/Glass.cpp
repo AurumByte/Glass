@@ -95,6 +95,12 @@ int main(int argc, char** argv)
             getline(cin, Input);
         }
 
+        else if (getString(Line, "GetKey(", ");") && Syspart == 1 && Comments == 0)
+        {
+            ConsoleGetKey(Line);
+            getch();
+        }
+
         // These are the part of PostThread Package.
         else if (getString(Line, "Time.Sleep(", ");") && Postpart == 1 && Comments == 0) PostThreadSleep(Line);
         else if (Line == "Time.Now();" && Postpart == 1 && Comments == 0) PostThreadNow();

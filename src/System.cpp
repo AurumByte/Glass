@@ -77,6 +77,24 @@ void ConsoleShoutln(const std::string lines)
     else Error(lines, to_string(Count));
 }
 
+void ConsoleGetKey(const std::string lines)
+{
+    string repl = replace(lines, "\\GetKey", "");
+    string repl2 = replace(repl, "\\;", "");
+    string repl3 = replace(repl2, "\\(", "");
+    string repl4 = replace(repl3, "\\)", "");
+    string repl5 = replace(repl4, "\"", "");
+
+    if (getString(repl4, "\"", "\"")) cout << repl5;
+    else if (getString(repl4, "\"", "\"") == false) cout << variables[repl4];
+    else if (getString(repl4, "\'", "\'") || getString(repl4, "\"", "\'") || getString(repl4, "\'", "\"") || startswith(repl4, "\"") == false || endswith(repl4, "\"") == false)
+    {
+        Error(lines, to_string(Count));
+    }
+
+    else Error(lines, to_string(Count));
+}
+
 std::string ConsoleGet(const std::string lines)
 {
     string repl = replace(lines, "\\Get", "");
@@ -100,6 +118,7 @@ std::string ConsoleGet(const std::string lines)
 
     else if (getString(repl4, "\'", "\'") || getString(repl4, "\"", "\'") || getString(repl4, "\'", "\"") || startswith(repl4, "\"") == false || endswith(repl4, "\"") == false)
     {
+        return_val = "None";
         Error(lines, to_string(Count));
     }
 
