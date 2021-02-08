@@ -7,3 +7,4 @@ and now it ends.*/
 
 using System;
 Shout("Hello world!");
+Get("");
