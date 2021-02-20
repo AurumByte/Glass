@@ -42,6 +42,10 @@ std::string RandomUniform(const std::string num)
 
     int min = stoi(Comma);
     int max = stoi(Comma2);
-    double Number = (double)((rand() % max) + min) * .1;
-    return to_string(Number);
+    int ZeroToOne = (rand() % 1000) + 0;
+    int Number = (rand() % max) + min;
+
+    string Decimal = "0." + to_string(ZeroToOne);
+    float UniformNum = stof(Decimal) * Number;
+    return to_string(UniformNum);
 }
