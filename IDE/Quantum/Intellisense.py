@@ -10,10 +10,15 @@ class Intellisense:
 		if target:
 			idx = '1.0'
 			while 1:
-				idx = self.parent.Text_area.search(target, idx, nocase = 1, stopindex=END)
+				idx = self.parent.Text_area.search(target, idx, nocase = 1, stopindex = END)
 				if not idx: break
 				lastidx = '%s+%dc' % (idx, len(target))
 				self.parent.Text_area.tag_add(tag, idx, lastidx)
 				idx = lastidx
 
 			self.parent.Text_area.tag_config(tag, foreground = Color)
+
+	def Colorcode(self, *args):
+		self.intellisense("using", "#f5b800", "using_tag")
+		self.intellisense("Shout", "#f55a00", "shout_tag")
+		self.intellisense("Shoutln", "#f55a00", "shoutln_tag")

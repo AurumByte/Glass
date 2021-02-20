@@ -49,16 +49,11 @@ class Quantum:
 		self.intellisense = Intellisense(self)
 		self.binding_keys()
 
-	def Colorcode(self, *args):
-		self.intellisense.intellisense("using", "#f5b800", "using_tag")
-		self.intellisense.intellisense("Shout", "#f55a00", "shout_tag")
-		self.intellisense.intellisense("Shoutln", "#f55a00", "shoutln_tag")
-
 	# This will update title of the window
 	def update_title(self, name = None):
 		if name: self.root.title(f"{name} - Quantum")
 		else: self.root.title("Untitled - Quantum")
-		self.Colorcode()
+		self.intellisense.Colorcode()
 
 	# This will create a new file in our IDE
 	def new_file(self, *args):
@@ -135,7 +130,7 @@ class Quantum:
 		self.Text_area.bind('<Control-f>', self.menu.find)
 		self.Text_area.bind('<Control-BackSpace>', self.do_ctrl_backspace)
 		self.Text_area.bind('<Key>', self.status.update_status)
-		self.Text_area.bind('<Alt-i>', self.Colorcode)
+		self.Text_area.bind('<Alt-i>', self.intellisense.Colorcode)
 
 # Creating Tkinter root
 if __name__ == '__main__':
