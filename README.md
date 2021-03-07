@@ -52,7 +52,7 @@ You can now get it's developement log at: https://trello.com/b/xZ02JY5g/glass<br
 By the end of 2021, we want to make Glass capable of handling massive console applications without any syntax complexity. Not like a test program, but this time with proper Loops, Functions, Classes, Variables, Conditional statements and much more. This means that we need to Optimize, Enhance, Powerfull and make Glass so much Easy to use.
 
 ## Mentions
-**SPECIAL THANKS** to TheCherno and Nikhil Malankar for providing all the amazing C++ tutorials on his YouTube Channel :)
+**SPECIAL THANKS** to TheCherno and Nikhil Malankar :)
 
 Their YouTube Channel links:<br />
 TheCherno: https://www.youtube.com/c/TheChernoProject<br />
