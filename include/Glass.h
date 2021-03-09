@@ -33,4 +33,6 @@ extern int Collectionpart;
 extern int Count;
 extern int Comments;
 
+extern std::string Arguments[7000];
+
 void Error(const std::string lines, const std::string num);
