@@ -1,7 +1,0 @@
-using System;
-using Collections.DataTypes;
-
-float a = 0123.91080;
-
-Shout(a);
-Get("");
