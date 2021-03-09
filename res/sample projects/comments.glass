@@ -2,8 +2,10 @@
 
 /*This is a multiline comment
 Look it works!
-using System;
+string Test = "It really works!!!";
 and now it ends.*/
+
+/* Multiline comment can also be used as single line comment! */
 
 using System;
 Shout("Hello world!");
