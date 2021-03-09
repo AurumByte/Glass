@@ -41,6 +41,17 @@ std::string DataTypeStr(const std::string lines)
             return repl4;
         }
 
+        else if (getString(data, "System.argv[", "];") && Syspart == 1 && getString(data, "\'", "\'") == false || getString(data, "\"", "\'") == false || getString(data, "\'", "\"") == false || startswith(data, "\"") == false || endswith(data, "\"") == false)
+        {
+            string ARGV = SystemArgv(data);
+
+            string TitleVal = join(name, " ");
+            string argvValue = join(TitleVal, Arguments[stoi(ARGV)]);
+            string repl5 = replace(argvValue, "\n", "");
+
+            return repl5;
+        }
+
         else if (getString(data, "\'", "\'") || getString(data, "\"", "\'") || getString(data, "\'", "\"") || startswith(data, "\"") == false || endswith(data, "\"") == false)
         {
             Error(lines, to_string(Count));

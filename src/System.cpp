@@ -7,11 +7,6 @@ void ConsoleClear()
     system("cls");
 }
 
-void ConsoleColorReser()
-{
-    setConsoleColor(7);
-}
-
 void ConsoleCMD(const std::string lines)
 {
     string repl = replace(lines, "\\Console.CMD", "");
@@ -117,6 +112,29 @@ std::string ConsoleGet(const std::string lines)
     }
 
     else if (getString(repl4, "\'", "\'") || getString(repl4, "\"", "\'") || getString(repl4, "\'", "\"") || startswith(repl4, "\"") == false || endswith(repl4, "\"") == false)
+    {
+        return_val = "None";
+        Error(lines, to_string(Count));
+    }
+
+    else
+    {
+        return_val = "None";
+        Error(lines, to_string(Count));
+    }
+    return return_val;
+}
+
+std::string SystemArgv(const std::string lines)
+{
+    string repl = replace(lines, "\\System.argv", "");
+    string repl2 = replace(repl, "\\;", "");
+    string repl3 = replace(repl2, "\\[", "");
+    string repl4 = replace(repl3, "\\]", "");
+
+    string return_val;
+    if (getString(repl4, "\"", "\"") == false && stoi(repl4) < 7001) return_val = repl4;
+    else if (getString(repl4, "\"", "\"") || getString(repl4, "\'", "\'") || getString(repl4, "\"", "\'") || getString(repl4, "\'", "\"") || startswith(repl4, "\"") || endswith(repl4, "\"") || startswith(repl4, "\'") || endswith(repl4, "\'"))
     {
         return_val = "None";
         Error(lines, to_string(Count));

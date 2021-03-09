@@ -20,6 +20,8 @@ int Collectionpart;
 int Count; // This will make Count variable global which will be used by Error function.
 int Comments; // This will make Comments variable global which will be used to check whether there is a multiline comment in the code.
 
+std::string Arguments[7000]; // Change this in FUTURE.
+
 // This is a global function which will help to make error messages more dynamic.
 void Error(const std::string lines, const std::string num)
 {
@@ -40,13 +42,11 @@ int main(int argc, char** argv)
     // Initializing Glass
     DirName = argv[1];
     if (endswith(DirName, ".glass")) in.open(DirName);
-    else if (DirName == "-version") cout << "Glass 2021 [Alpha 0.9]" << endl;
-    else if (DirName == "-help") cout << "-version :     Shows the version of Glass" << endl;
     else
     {
-    	system("color 04");
-        cout << "Type -help for more info." << endl;
-    	cout << "Cannot read \"" << DirName << "\"" << endl;
+    	setConsoleColor(04);
+    	cout << "Error.\nCannot read \"" << DirName << "\"" << endl;
+        setConsoleColor(7);
     	exit(0);
     }
 
@@ -59,7 +59,10 @@ int main(int argc, char** argv)
     Genericpart = 0;
     Collectionpart = 0;
 
+    // Comments and Arguments manager.
     Comments = 0;
+    for (int argus = 0; argus < argc; argus++) Arguments[argus] = argv[argus];
+
     // Main langauge
     while (in)
     {
@@ -68,6 +71,7 @@ int main(int argc, char** argv)
         // These are not part of any Package.
         if (Line == "" || Line == " " || startswith(Line, "  ")) continue;
         else if (startswith(Line, "//")) continue;
+        else if (getString(Line, "/*", "*/")) continue;
         else if (startswith(Line, "/*") && Comments == 0) Comments = 1;
         else if (endswith(Line, "*/") && Comments == 1) Comments = 0;
 
@@ -82,8 +86,13 @@ int main(int argc, char** argv)
 
         // These are the part of the System Package.
         else if (Line == "System.Exit();" && Syspart == 1 && Comments == 0) exit(0);
+        else if (getString(Line, "System.argv[", "];") && Syspart == 1 && Comments == 0)
+        {
+            string ARGV = SystemArgv(Line);
+            Arguments[stoi(ARGV)];
+        }
+
         else if (Line == "Console.Clear();" && Syspart == 1 && Comments == 0) ConsoleClear();
-        else if (Line == "Console.ColorReset();" && Syspart == 1 && Comments == 0) ConsoleColorReser();
         else if (getString(Line, "Console.CMD(", ");") && Syspart == 1 && Comments == 0) ConsoleCMD(Line);
         else if (getString(Line, "Console.Title(", ");") && Syspart == 1 && Comments == 0) ConsoleTitle(Line);
         else if (getString(Line, "Console.Color(", ");") && Syspart == 1 && Comments == 0) ConsoleColor(Line);
