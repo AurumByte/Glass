@@ -51,6 +51,9 @@ You can now get it's developement log at: https://trello.com/b/xZ02JY5g/glass<br
 ## Short Term Goals
 By the end of 2021, we want to make Glass capable of handling massive console applications without any syntax complexity. Not like a test program, but this time with proper Loops, Functions, Classes, Variables, Conditional statements and much more. This means that we need to Optimize, Enhance, Powerfull and make Glass so much Easy to use.
 
+## License
+All code is licensed under an MIT license. This allows you to re-use the code freely, remixed in both commercial and non-commercial projects. The only requirement is to include the same license when distributing.
+
 ## Mentions
 **SPECIAL THANKS** to TheCherno and Nikhil Malankar :)
 
