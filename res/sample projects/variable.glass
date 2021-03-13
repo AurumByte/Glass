@@ -7,6 +7,7 @@ string Pass = "Continue.";
 
 Shoutln("Hello world");
 GetKey(Pass);
+Shoutln("");
 
 // Test the Bool variable system.
 bool test = True;
@@ -18,14 +19,14 @@ GetKey(Pass);
 Shoutln("");
 
 // Test the Float variable system.
-float a = 0123.91080;
+float c = 0123.91080;
 
-Shoutln(a);
+Shoutln(c);
 GetKey(Pass);
 Shoutln("");
 
 // Test the Int variable system.
-int a = 1398;
+int d = 1398;
 
-Shoutln(a);
+Shoutln(d);
 Get(Pass);

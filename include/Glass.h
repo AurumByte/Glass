@@ -4,6 +4,7 @@
 #include <typeinfo>
 #include <fstream>
 #include <cstdlib>
+#include <cstring>
 #include <regex>
 #include <ctime>
 #include <map>

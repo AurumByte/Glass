@@ -41,12 +41,31 @@ std::string DataTypeStr(const std::string lines)
             return repl4;
         }
 
-        else if (getString(data, "System.argv[", "];") && Syspart == 1 && getString(data, "\'", "\'") == false || getString(data, "\"", "\'") == false || getString(data, "\'", "\"") == false || startswith(data, "\"") == false || endswith(data, "\"") == false)
+        else if (getString(data, "System.argv[", "]") && Syspart == 1)
         {
             string ARGV = SystemArgv(data);
 
             string TitleVal = join(name, " ");
             string argvValue = join(TitleVal, Arguments[stoi(ARGV)]);
+            string repl5 = replace(argvValue, "\n", "");
+
+            return repl5;
+        }
+
+        else if (getString(data, "System.Environment[", "]") && Syspart == 1)
+        {
+            string Environ = SystemEnviron(data);
+            int EnvironmentSize = Environ.length();
+            char GetEnviron[EnvironmentSize + 1];
+
+            strcpy(GetEnviron, Environ.c_str());
+            char* GetEnviron2 = getenv(GetEnviron);
+
+            string GetEnvironment;
+            GetEnvironment += GetEnviron2;
+
+            string TitleVal = join(name, " ");
+            string argvValue = join(TitleVal, GetEnvironment);
             string repl5 = replace(argvValue, "\n", "");
 
             return repl5;

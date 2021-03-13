@@ -11,3 +11,4 @@ void ConsoleShoutln(const std::string lines);
 void ConsoleGetKey(const std::string lines);
 std::string ConsoleGet(const std::string lines);
 std::string SystemArgv(const std::string lines);
+std::string SystemEnviron(const std::string lines);

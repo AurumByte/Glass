@@ -133,7 +133,33 @@ std::string SystemArgv(const std::string lines)
     string repl4 = replace(repl3, "\\]", "");
 
     string return_val;
-    if (getString(repl4, "\"", "\"") == false && stoi(repl4) < 7001) return_val = repl4;
+    if (getString(repl4, "\"", "\"") == false && VarTypes[repl4] == "type<int>" && stoi(variables[repl4]) < 7001) return_val = variables[repl4];
+    else if (getString(repl4, "\"", "\"") == false && stoi(repl4) < 7001) return_val = repl4;
+    else if (getString(repl4, "\"", "\"") || getString(repl4, "\'", "\'") || getString(repl4, "\"", "\'") || getString(repl4, "\'", "\"") || startswith(repl4, "\"") || endswith(repl4, "\"") || startswith(repl4, "\'") || endswith(repl4, "\'"))
+    {
+        return_val = "None";
+        Error(lines, to_string(Count));
+    }
+
+    else
+    {
+        return_val = "None";
+        Error(lines, to_string(Count));
+    }
+    return return_val;
+}
+
+std::string SystemEnviron(const std::string lines)
+{
+    string repl = replace(lines, "\\System.Environment", "");
+    string repl2 = replace(repl, "\\;", "");
+    string repl3 = replace(repl2, "\\[", "");
+    string repl4 = replace(repl3, "\\]", "");
+    string repl5 = replace(repl4, "\"", "");
+
+    string return_val;
+    if (getString(repl4, "\"", "\"")) return_val = repl5;
+    else if (getString(repl4, "\"", "\"") == false && VarTypes[repl4] == "type<string>") return_val = variables[repl4];
     else if (getString(repl4, "\"", "\"") || getString(repl4, "\'", "\'") || getString(repl4, "\"", "\'") || getString(repl4, "\'", "\"") || startswith(repl4, "\"") || endswith(repl4, "\"") || startswith(repl4, "\'") || endswith(repl4, "\'"))
     {
         return_val = "None";
