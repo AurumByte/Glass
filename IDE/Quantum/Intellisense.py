@@ -19,6 +19,10 @@ class Intellisense:
 			self.parent.Text_area.tag_config(tag, foreground = Color)
 
 	def Colorcode(self, *args):
-		self.intellisense("using", "#f5b800", "using_tag")
-		self.intellisense("Shout", "#f55a00", "shout_tag")
-		self.intellisense("Shoutln", "#f55a00", "shoutln_tag")
+		self.intellisense("using", "#ffb15e", "using_tag")
+		self.intellisense("Shout", "#528ff7", "shout_tag")
+		self.intellisense("Shoutln", "#528ff7", "shoutln_tag")
+		self.intellisense("Get", "#528ff7", "get_tag")
+		self.intellisense("GetKey", "#528ff7", "getkey_tag")
+		self.intellisense("\"", "#a4ff7d", "doublequotes_tag")
+		self.intellisense("'", "#a4ff7d", "singlequotes_tag")

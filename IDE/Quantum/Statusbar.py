@@ -11,7 +11,7 @@ class Statusbar:
 		self.bar_data = Label(parent.Text_area,
 						textvariable = self.status,
 						fg = "#f9f9f9",
-						bg = "#1c1c1c",
+						bg = "#111111",
 						font = Font_data)
 
 		self.bar_data.pack(side = BOTTOM, fill = BOTH)

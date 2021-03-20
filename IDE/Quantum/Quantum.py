@@ -31,7 +31,7 @@ class Quantum:
 							selectbackground = "#474747",
 							insertbackground = "#ff1269",
 							foreground = "#f9f9f9",
-							background = "#2c2c2c",
+							background = "#222222",
 							undo = True,
 							wrap = WORD)
 
