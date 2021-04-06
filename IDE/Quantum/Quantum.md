@@ -1,11 +1,11 @@
 # Quantum
 Quantum is an IDE made using Python from scratch.
-"Quantum" this name is inspired by Atom text editor.
+The name "Quantum" is inspired by the Atom text editor.
 
 Quantum is an early-stage IDE made for Glass (My own programming language) and other programming languages such as C/C++, Python, Java, C# and much more. Currently not much is implemented, however the developement for Quantum is going really well.
 
 ## Getting Started
-Visual Studio Code is recommended (You can use your desired one), Quantum is not officially completed yet, but you can still use it to make edit some text files. Currently it also doesn't support intellisense, also as of now Quantum is only focused to run on Windows Operating System.
+Visual Studio Code is recommended (You can use your desired one), Quantum is not officially completed yet, but you can still use it to make edits to some text files. Currently it also doesn't support intellisense, and as of now Quantum is only focused to run on Windows Operating System.
 
 Start by cloning the repository with `git clone https://github.com/Light-Lens/Quantum`.
 
@@ -34,4 +34,4 @@ You need to install the following on your machine.
 - Then Open or Create a new file.
 
 ## What is Quantum
-Quantum is an IDE made for Glass programming language (It can also be used to code in any different language). I made this IDE/Code editor because as of now any other IDE such as VS-Code, Sublime Text 3, Visual Studio and others do not support Glass, they cannot provide intellisense, auto complete or any other feature that is important for programming.. Also Quantum is open source so you can contribute and help me make it better.
+Quantum is an IDE made for Glass programming language (It can also be used to code in any different language). I made this IDE/Code editor because as of now any other IDE/Code Editors such as VS-Code, Sublime Text 3, Visual Studio and others do not support Glass, they cannot provide intellisense, auto complete or any other feature that is important for programming.. Also Quantum is open source so you can contribute and help me make it better.
