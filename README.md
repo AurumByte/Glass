@@ -45,7 +45,7 @@ Get Info About [Quantum](https://github.com/Light-Lens/Glass/blob/master/IDE/Qua
 Get Info About [CGlass](https://github.com/Light-Lens/Glass/blob/master/IDE/CGlass/CGlass.md#cglass).
 
 ## Devlog at Trello
-You can now get it's developement log at: https://trello.com/b/xZ02JY5g/glass<br />
+You can get Glass's developement log at: [Trello](https://trello.com/b/xZ02JY5g/glass)<br />
 
 ## Short Term Goals
 By the end of 2021, we want to make Glass capable of handling massive console applications without any syntax complexity. Not like a test program, but this time with proper Loops, Functions, Classes, Variables, Conditional statements and much more. This means that we need to Optimize, Enhance, and make Glass Powerful so that is much Easier to use.
@@ -57,7 +57,7 @@ All code is licensed under an MIT license. This allows you to re-use the code fr
 **SPECIAL THANKS** to TheCherno and Nikhil Malankar :)
 
 Their YouTube Channel links:<br />
-TheCherno: https://www.youtube.com/c/TheChernoProject<br />
-Nikhil Malankar: https://www.youtube.com/channel/UC7rPccatXfcuLxiUPzm9AyQ
+[TheCherno](https://www.youtube.com/c/TheChernoProject)<br />
+[Nikhil Malankar](https://www.youtube.com/channel/UC7rPccatXfcuLxiUPzm9AyQ)
 
 Thanks to everyone for their support :)
