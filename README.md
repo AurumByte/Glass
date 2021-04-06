@@ -36,13 +36,13 @@ You need to install the following on your machine.<br />
 - Then go to "bin" folder and open Command Prompt and type "Glass" and path of your file with it's name.
 - If you haven't created your own then type path of those sample programs with their name, which exixt in "res/sample projects" folder.
 - If you want to create your own Glass program then create a new file with an extention of ".glass" without quotes.
-- Then go to Quantum ![here](https://github.com/Light-Lens/Glass/blob/master/IDE/Quantum/Quantum.md#quantum)
+- Then go to Quantum
 
 ## What is Quantum
-Get Info About Quantum ![here](https://github.com/Light-Lens/Glass/blob/master/IDE/Quantum/Quantum.md#what-is-quantum).
+Get Info About [Quantum](https://github.com/Light-Lens/Glass/blob/master/IDE/Quantum/Quantum.md#what-is-quantum).
 
 ## What is CGLass
-Get Info About CGlass ![here](https://github.com/Light-Lens/Glass/blob/master/IDE/CGlass/CGlass.md#cglass).
+Get Info About [CGlass](https://github.com/Light-Lens/Glass/blob/master/IDE/CGlass/CGlass.md#cglass).
 
 ## Devlog at Trello
 You can now get it's developement log at: https://trello.com/b/xZ02JY5g/glass<br />
